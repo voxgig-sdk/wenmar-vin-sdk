@@ -1,0 +1,45 @@
+# BasicVehicleLaborFlow
+
+main: kit: flow: BasicVehicleLaborFlow:
+{
+  entity: "vehicle_labor",
+  kind: "basic",
+  name: "BasicVehicleLaborFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vehicle_labor_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "vehicle_labor_ref01",
+        srcdatavar: "vehicle_labor_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "vehicle_labor01",
+        vehicle_id: "vehicle01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-vehicle_labor_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVehicleLaborFlow"
+}

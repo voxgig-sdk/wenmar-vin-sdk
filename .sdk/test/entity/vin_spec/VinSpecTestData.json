@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "vin_spec": {
+      "VIN_SPEC00": {
+        "as_of": "s5a",
+        "attribution": [],
+        "decode": {},
+        "engine": "s5d",
+        "engine_settled": true,
+        "id": "VIN_SPEC00",
+        "specs": [],
+        "vehicle": "s61",
+        "warnings": []
+      },
+      "VIN_SPEC01": {
+        "as_of": "sb4",
+        "attribution": [],
+        "decode": {},
+        "engine": "sb7",
+        "engine_settled": true,
+        "id": "VIN_SPEC01",
+        "specs": [],
+        "vehicle": "sbb",
+        "warnings": []
+      },
+      "VIN_SPEC02": {
+        "as_of": "s10e",
+        "attribution": [],
+        "decode": {},
+        "engine": "s111",
+        "engine_settled": true,
+        "id": "VIN_SPEC02",
+        "specs": [],
+        "vehicle": "s115",
+        "warnings": []
+      }
+    }
+  },
+  "new": {
+    "vin_spec": {
+      "vin_spec_ref01": {
+        "as_of": "s168",
+        "attribution": [],
+        "decode": {},
+        "engine": "s16b",
+        "engine_settled": true,
+        "specs": [],
+        "vehicle": "s16f",
+        "warnings": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vin/{vin}/specs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  point: "warning"
+  note: "Points GET /v1/vehicles/submodels and GET /v1/vehicles/trims on entity=submodel op=list have the same selector (exist: make,model,year), so only GET /v1/vehicles/submodels is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "submodel"
+  op: "list"
+  points: [
+    "GET /v1/vehicles/submodels"
+    "GET /v1/vehicles/trims"
+  ]
+
+}

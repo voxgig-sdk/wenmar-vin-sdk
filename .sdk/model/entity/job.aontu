@@ -1,0 +1,192 @@
+# Entity: job
+
+main: kit: entity: job: {
+
+  alias: field: {}
+
+  fields: {
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      sh: "The credit the labour estimates ask for."
+      t: "`$ARRAY`"
+    }
+    components: {
+      h: "Components"
+      n: "components"
+      r: true
+      t: "`$ARRAY`"
+    }
+    estimates: {
+      h: "Estimates"
+      n: "estimates"
+      r: false
+      sh: "The job's class-scope figures."
+      t: [
+        "`$ONE`"
+        [
+          "`$ARRAY`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    excludes: {
+      h: "Excludes"
+      n: "excludes"
+      r: true
+      sh: "Work often done at the same visit that is not part of this job."
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The job's id."
+      t: "`$STRING`"
+    }
+    includes: {
+      h: "Includes"
+      n: "includes"
+      r: true
+      sh: "The work the job covers."
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    note: {
+      h: "Note"
+      n: "note"
+      r: true
+      sh: "What an estimate is not."
+      t: "`$STRING`"
+    }
+    related: {
+      h: "Related"
+      n: "related"
+      r: true
+      t: "`$ARRAY`"
+    }
+    system: {
+      h: "System"
+      n: "system"
+      r: true
+      sh: "The id of the system the job belongs to."
+      t: "`$STRING`"
+    }
+    system_name: {
+      h: "System Name"
+      n: "system_name"
+      r: true
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The job's page on this site."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "job"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/jobs"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/jobs"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "jobs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/jobs/{job}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "brake-pads-front"
+                k: "param"
+                n: "id"
+                or: "job"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/jobs/{job}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              job: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "jobs"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

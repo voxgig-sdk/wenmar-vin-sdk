@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "recent": {
+      "RECENT00": {
+        "recall": {},
+        "vehicles": [],
+        "vehicles_listed": 32
+      },
+      "RECENT01": {
+        "recall": {},
+        "vehicles": [],
+        "vehicles_listed": 62
+      },
+      "RECENT02": {
+        "recall": {},
+        "vehicles": [],
+        "vehicles_listed": 92
+      }
+    }
+  },
+  "new": {
+    "recent": {
+      "recent_ref01": {
+        "recall": {},
+        "vehicles": [],
+        "vehicles_listed": 122
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/recalls/recent": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+# BasicCodeFlow
+
+main: kit: flow: BasicCodeFlow:
+{
+  entity: "code",
+  kind: "basic",
+  name: "BasicCodeFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "code_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "code_ref01",
+        srcdatavar: "code_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "code01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-code_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCodeFlow"
+}

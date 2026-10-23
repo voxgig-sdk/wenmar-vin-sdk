@@ -1,0 +1,155 @@
+# Entity: payroll_deduction
+
+main: kit: entity: payroll_deduction: {
+
+  alias: field: {}
+
+  fields: {
+    meaning: {
+      h: "Meaning"
+      n: "meaning"
+      r: true
+      sh: "What the factor means."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "The name the engine gives the factor."
+      t: "`$STRING`"
+    }
+    value: {
+      fo: "double"
+      h: "Value"
+      n: "value"
+      r: true
+      sh: "The value used, after rounding."
+      t: "`$NUMBER`"
+    }
+  }
+
+  name: "payroll_deduction"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payroll/deductions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "0"
+                k: "query"
+                n: "federal_claim"
+                or: "federal_claim"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "biweekly"
+                k: "query"
+                n: "frequency"
+                or: "frequency"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2400.00"
+                k: "query"
+                n: "gross"
+                or: "gross"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2026-07-15"
+                k: "query"
+                n: "pay_date"
+                or: "pay_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "ON"
+                k: "query"
+                n: "province"
+                or: "province"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "0"
+                k: "query"
+                n: "provincial_claim"
+                or: "provincial_claim"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "0.00"
+                k: "query"
+                n: "ytd_cpp"
+                or: "ytd_cpp"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "0.00"
+                k: "query"
+                n: "ytd_cpp2"
+                or: "ytd_cpp2"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "0.00"
+                k: "query"
+                n: "ytd_ei"
+                or: "ytd_ei"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "0.00"
+                k: "query"
+                n: "ytd_pensionable"
+                or: "ytd_pensionable"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payroll/deductions"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payroll"
+            }
+            {
+              lit: "deductions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

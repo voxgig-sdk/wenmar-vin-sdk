@@ -1,0 +1,22 @@
+# BasicEngineFlow
+
+main: kit: flow: BasicEngineFlow:
+{
+  entity: "engine",
+  kind: "basic",
+  name: "BasicEngineFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "engine_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEngineFlow"
+}

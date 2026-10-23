@@ -1,0 +1,161 @@
+# Entity: overview
+
+main: kit: entity: overview: {
+
+  alias: field: {}
+
+  fields: {
+    code: {
+      h: "Code"
+      n: "code"
+      r: true
+      sh: "`invalid_check_digit`, `model_year_unknown`, `no_patterns` or `model_unresolved`."
+      t: "`$STRING`"
+    }
+    message: {
+      h: "Message"
+      n: "message"
+      r: true
+      t: "`$STRING`"
+    }
+    suggestions: {
+      h: "Suggestions"
+      n: "suggestions"
+      r: false
+      sh: "VINs the caller may have meant."
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "overview"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/overview"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "2018_ford_f-150"
+                k: "param"
+                n: "vehicle_id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/overview"
+          q: {
+            exist: [
+              "vehicle_id"
+            ]
+          }
+          r: {
+            param: {
+              id: "vehicle_id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "vehicle_id"
+            }
+            {
+              lit: "overview"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/vin/{vin}/overview"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "KM8K2CAB4PU001140"
+                k: "param"
+                n: "vin_id"
+                or: "vin"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 2023
+                k: "query"
+                n: "year"
+                or: "year"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vin/{vin}/overview"
+          q: {
+            exist: [
+              "vin_id"
+            ]
+          }
+          r: {
+            param: {
+              vin: "vin_id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vin"
+            }
+            {
+              var: "vin_id"
+            }
+            {
+              lit: "overview"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.vehicle")]
+    [path("$.main.kit.entity.vin")]
+  ]
+
+}

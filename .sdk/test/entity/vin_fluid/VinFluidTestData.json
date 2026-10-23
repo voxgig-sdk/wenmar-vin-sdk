@@ -1,0 +1,84 @@
+{
+  "existing": {
+    "vin_fluid": {
+      "VIN_FLUID00": {
+        "as_of": "s96",
+        "attribution": [],
+        "brake": [],
+        "checked_as_of": "s99",
+        "coolant": [],
+        "decode": {},
+        "engine": "s9c",
+        "engine_oil": [],
+        "engine_oil_checked": [],
+        "engine_settled": false,
+        "id": "VIN_FLUID00",
+        "refrigerant": [],
+        "transmission": [],
+        "vehicle": "sa3",
+        "warnings": []
+      },
+      "VIN_FLUID01": {
+        "as_of": "s12c",
+        "attribution": [],
+        "brake": [],
+        "checked_as_of": "s12f",
+        "coolant": [],
+        "decode": {},
+        "engine": "s132",
+        "engine_oil": [],
+        "engine_oil_checked": [],
+        "engine_settled": false,
+        "id": "VIN_FLUID01",
+        "refrigerant": [],
+        "transmission": [],
+        "vehicle": "s139",
+        "warnings": []
+      },
+      "VIN_FLUID02": {
+        "as_of": "s1c2",
+        "attribution": [],
+        "brake": [],
+        "checked_as_of": "s1c5",
+        "coolant": [],
+        "decode": {},
+        "engine": "s1c8",
+        "engine_oil": [],
+        "engine_oil_checked": [],
+        "engine_settled": false,
+        "id": "VIN_FLUID02",
+        "refrigerant": [],
+        "transmission": [],
+        "vehicle": "s1cf",
+        "warnings": []
+      }
+    }
+  },
+  "new": {
+    "vin_fluid": {
+      "vin_fluid_ref01": {
+        "as_of": "s258",
+        "attribution": [],
+        "brake": [],
+        "checked_as_of": "s25b",
+        "coolant": [],
+        "decode": {},
+        "engine": "s25e",
+        "engine_oil": [],
+        "engine_oil_checked": [],
+        "engine_settled": false,
+        "refrigerant": [],
+        "transmission": [],
+        "vehicle": "s265",
+        "warnings": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vin/{vin}/fluids": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

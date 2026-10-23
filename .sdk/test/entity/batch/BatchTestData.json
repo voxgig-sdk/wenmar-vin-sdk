@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "batch": {
+      "BATCH00": {
+        "vins": [],
+        "id": "BATCH00"
+      },
+      "BATCH01": {
+        "vins": [],
+        "id": "BATCH01"
+      },
+      "BATCH02": {
+        "vins": [],
+        "id": "BATCH02"
+      }
+    }
+  },
+  "new": {
+    "batch": {
+      "batch_ref01": {
+        "vins": []
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/vin/batch": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

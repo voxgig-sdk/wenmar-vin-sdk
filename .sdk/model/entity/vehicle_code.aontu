@@ -1,0 +1,159 @@
+# Entity: vehicle_code
+
+main: kit: entity: vehicle_code: {
+
+  alias: field: {}
+
+  fields: {
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      t: "`$ARRAY`"
+    }
+    bulletins: {
+      h: "Bulletins"
+      n: "bulletins"
+      r: false
+      t: "`$ANY`"
+    }
+    code: {
+      h: "Code"
+      n: "code"
+      r: true
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      t: "`$STRING`"
+    }
+    generic: {
+      h: "Generic"
+      n: "generic"
+      r: true
+      sh: "Whether every maker uses the code the same way."
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    note: {
+      h: "Note"
+      n: "note"
+      r: true
+      t: "`$STRING`"
+    }
+    related: {
+      h: "Related"
+      n: "related"
+      r: true
+      sh: "What else is held for the model year about the components a code concerns."
+      t: "`$OBJECT`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The page of this code on this model year."
+      t: "`$STRING`"
+    }
+    vehicle: {
+      h: "Vehicle"
+      n: "vehicle"
+      r: true
+      sh: "The model year an answer is about."
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vehicle_code"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/codes/{code}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "P0420"
+                k: "param"
+                n: "id"
+                or: "code"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "2018_ford_f-150"
+                k: "param"
+                n: "vehicle_id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/codes/{code}"
+          q: {
+            exist: [
+              "id"
+              "vehicle_id"
+            ]
+          }
+          r: {
+            param: {
+              code: "id"
+              id: "vehicle_id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "vehicle_id"
+            }
+            {
+              lit: "codes"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.vehicle")]
+  ]
+
+}

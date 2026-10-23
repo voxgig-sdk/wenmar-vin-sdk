@@ -1,0 +1,108 @@
+{
+  "existing": {
+    "vehicle_labor": {
+      "VEHICLE_LABOR00": {
+        "as_of": "sbe",
+        "attribution": [],
+        "basis": "sc0",
+        "class": "sc1",
+        "class_name": "sc2",
+        "engine": "sc3",
+        "estimates": [],
+        "hours": {},
+        "id": "VEHICLE_LABOR00",
+        "job": "sc7",
+        "name": "sc8",
+        "note": "sc9",
+        "notes": "sca",
+        "sample": "scb",
+        "scope": "scc",
+        "updated": "scd",
+        "url": "sce",
+        "vehicle": {},
+        "years": "sd0",
+        "vehicle_id": "VEHICLE01"
+      },
+      "VEHICLE_LABOR01": {
+        "as_of": "s17c",
+        "attribution": [],
+        "basis": "s17e",
+        "class": "s17f",
+        "class_name": "s180",
+        "engine": "s181",
+        "estimates": [],
+        "hours": {},
+        "id": "VEHICLE_LABOR01",
+        "job": "s185",
+        "name": "s186",
+        "note": "s187",
+        "notes": "s188",
+        "sample": "s189",
+        "scope": "s18a",
+        "updated": "s18b",
+        "url": "s18c",
+        "vehicle": {},
+        "years": "s18e",
+        "vehicle_id": "VEHICLE01"
+      },
+      "VEHICLE_LABOR02": {
+        "as_of": "s23a",
+        "attribution": [],
+        "basis": "s23c",
+        "class": "s23d",
+        "class_name": "s23e",
+        "engine": "s23f",
+        "estimates": [],
+        "hours": {},
+        "id": "VEHICLE_LABOR02",
+        "job": "s243",
+        "name": "s244",
+        "note": "s245",
+        "notes": "s246",
+        "sample": "s247",
+        "scope": "s248",
+        "updated": "s249",
+        "url": "s24a",
+        "vehicle": {},
+        "years": "s24c",
+        "vehicle_id": "VEHICLE01"
+      }
+    }
+  },
+  "new": {
+    "vehicle_labor": {
+      "vehicle_labor_ref01": {
+        "as_of": "s2f8",
+        "attribution": [],
+        "basis": "s2fa",
+        "class": "s2fb",
+        "class_name": "s2fc",
+        "engine": "s2fd",
+        "estimates": [],
+        "hours": {},
+        "job": "s301",
+        "name": "s302",
+        "note": "s303",
+        "notes": "s304",
+        "sample": "s305",
+        "scope": "s306",
+        "updated": "s307",
+        "url": "s308",
+        "vehicle": {},
+        "years": "s30a"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/{id}/labor": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/vehicles/{id}/labor/{job}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+# BasicRecallFlow
+
+main: kit: flow: BasicRecallFlow:
+{
+  entity: "recall",
+  kind: "basic",
+  name: "BasicRecallFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "recall_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "recall_ref01",
+        srcdatavar: "recall_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "recall01",
+        source: "source01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-recall_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRecallFlow"
+}

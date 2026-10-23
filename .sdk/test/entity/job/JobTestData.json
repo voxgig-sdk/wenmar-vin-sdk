@@ -1,0 +1,77 @@
+{
+  "existing": {
+    "job": {
+      "JOB00": {
+        "attribution": [],
+        "components": [],
+        "estimates": "s7a",
+        "excludes": [],
+        "id": "JOB00",
+        "includes": [],
+        "name": "s7e",
+        "note": "s7f",
+        "related": [],
+        "system": "s81",
+        "system_name": "s82",
+        "url": "s83"
+      },
+      "JOB01": {
+        "attribution": [],
+        "components": [],
+        "estimates": "sf2",
+        "excludes": [],
+        "id": "JOB01",
+        "includes": [],
+        "name": "sf6",
+        "note": "sf7",
+        "related": [],
+        "system": "sf9",
+        "system_name": "sfa",
+        "url": "sfb"
+      },
+      "JOB02": {
+        "attribution": [],
+        "components": [],
+        "estimates": "s16a",
+        "excludes": [],
+        "id": "JOB02",
+        "includes": [],
+        "name": "s16e",
+        "note": "s16f",
+        "related": [],
+        "system": "s171",
+        "system_name": "s172",
+        "url": "s173"
+      }
+    }
+  },
+  "new": {
+    "job": {
+      "job_ref01": {
+        "attribution": [],
+        "components": [],
+        "estimates": "s1e2",
+        "excludes": [],
+        "includes": [],
+        "name": "s1e6",
+        "note": "s1e7",
+        "related": [],
+        "system": "s1e9",
+        "system_name": "s1ea",
+        "url": "s1eb"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/jobs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/jobs/{job}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

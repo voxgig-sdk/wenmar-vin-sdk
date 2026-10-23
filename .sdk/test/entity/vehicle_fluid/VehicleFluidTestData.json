@@ -1,0 +1,68 @@
+{
+  "existing": {
+    "vehicle_fluid": {
+      "VEHICLE_FLUID00": {
+        "as_of": "s6e",
+        "attribution": [],
+        "brake": [],
+        "checked_as_of": "s71",
+        "coolant": [],
+        "engine_oil": [],
+        "engine_oil_checked": [],
+        "id": "VEHICLE_FLUID00",
+        "refrigerant": [],
+        "transmission": [],
+        "vehicle": {}
+      },
+      "VEHICLE_FLUID01": {
+        "as_of": "sdc",
+        "attribution": [],
+        "brake": [],
+        "checked_as_of": "sdf",
+        "coolant": [],
+        "engine_oil": [],
+        "engine_oil_checked": [],
+        "id": "VEHICLE_FLUID01",
+        "refrigerant": [],
+        "transmission": [],
+        "vehicle": {}
+      },
+      "VEHICLE_FLUID02": {
+        "as_of": "s14a",
+        "attribution": [],
+        "brake": [],
+        "checked_as_of": "s14d",
+        "coolant": [],
+        "engine_oil": [],
+        "engine_oil_checked": [],
+        "id": "VEHICLE_FLUID02",
+        "refrigerant": [],
+        "transmission": [],
+        "vehicle": {}
+      }
+    }
+  },
+  "new": {
+    "vehicle_fluid": {
+      "vehicle_fluid_ref01": {
+        "as_of": "s1b8",
+        "attribution": [],
+        "brake": [],
+        "checked_as_of": "s1bb",
+        "coolant": [],
+        "engine_oil": [],
+        "engine_oil_checked": [],
+        "refrigerant": [],
+        "transmission": [],
+        "vehicle": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/{id}/fluids": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

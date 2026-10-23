@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      description: "Free vehicle data for auto repair shops: VIN decoding and a year, make, model, submodel and engine catalog. No API key and no account. Responses are plain JSON with no wrapper. Errors are `{ \"error\": { \"code\", \"message\", \"details\" } }`. Fields and endpoints are only ever added. One address may make 600 requests a minute."
+      license: {
+        identifier: "MIT"
+        name: "MIT"
+      }
+      servers: [
+        {
+          url: "https://open.wenmarpro.com"
+        }
+      ]
+      summary: "Free vehicle data for auto repair shops: VIN decoding and a year, make, model, submodel and engine catalog."
+      title: "Wenmar Open"
+      version: "0.2.0"
+      website: "https://open.wenmarpro.com"
+    }
+  }
+}
+

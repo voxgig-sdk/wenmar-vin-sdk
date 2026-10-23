@@ -1,0 +1,73 @@
+{
+  "existing": {
+    "model": {
+      "MODEL00": {
+        "as_of": {},
+        "attribution": [],
+        "id": "MODEL00",
+        "lookup": {},
+        "make": {},
+        "may_apply": false,
+        "model": {},
+        "name": "s75",
+        "year_from": 118,
+        "year_to": 119,
+        "years": []
+      },
+      "MODEL01": {
+        "as_of": {},
+        "attribution": [],
+        "id": "MODEL01",
+        "lookup": {},
+        "make": {},
+        "may_apply": false,
+        "model": {},
+        "name": "se3",
+        "year_from": 228,
+        "year_to": 229,
+        "years": []
+      },
+      "MODEL02": {
+        "as_of": {},
+        "attribution": [],
+        "id": "MODEL02",
+        "lookup": {},
+        "make": {},
+        "may_apply": false,
+        "model": {},
+        "name": "s151",
+        "year_from": 338,
+        "year_to": 339,
+        "years": []
+      }
+    }
+  },
+  "new": {
+    "model": {
+      "model_ref01": {
+        "as_of": {},
+        "attribution": [],
+        "lookup": {},
+        "make": {},
+        "may_apply": false,
+        "model": {},
+        "name": "s1bf",
+        "year_from": 448,
+        "year_to": 449,
+        "years": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/models": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/models/{make}/{model}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

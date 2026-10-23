@@ -1,0 +1,22 @@
+# BasicVehicleBulletinFlow
+
+main: kit: flow: BasicVehicleBulletinFlow:
+{
+  entity: "vehicle_bulletin",
+  kind: "basic",
+  name: "BasicVehicleBulletinFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vehicle_bulletin_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVehicleBulletinFlow"
+}

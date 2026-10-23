@@ -1,0 +1,26 @@
+# BasicPartsCardFlow
+
+main: kit: flow: BasicPartsCardFlow:
+{
+  entity: "parts_card",
+  kind: "basic",
+  name: "BasicPartsCardFlow",
+  step: [
+    {
+      m: {
+        vin_id: "vin01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "parts_card_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPartsCardFlow"
+}

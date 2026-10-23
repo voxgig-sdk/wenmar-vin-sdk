@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "submodel": {
+      "SUBMODEL00": {
+        "id": "SUBMODEL00",
+        "kind": "s1f",
+        "name": "s20"
+      },
+      "SUBMODEL01": {
+        "id": "SUBMODEL01",
+        "kind": "s3d",
+        "name": "s3e"
+      },
+      "SUBMODEL02": {
+        "id": "SUBMODEL02",
+        "kind": "s5b",
+        "name": "s5c"
+      }
+    }
+  },
+  "new": {
+    "submodel": {
+      "submodel_ref01": {
+        "kind": "s79",
+        "name": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/submodels": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/vehicles/trims": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "vin_fuel": {
+      "VIN_FUEL00": {
+        "as_of": {},
+        "attribution": [],
+        "decode": {},
+        "engine": "s5d",
+        "engine_settled": true,
+        "id": "VIN_FUEL00",
+        "ratings": [],
+        "vehicle": "s61",
+        "warnings": []
+      },
+      "VIN_FUEL01": {
+        "as_of": {},
+        "attribution": [],
+        "decode": {},
+        "engine": "sb7",
+        "engine_settled": true,
+        "id": "VIN_FUEL01",
+        "ratings": [],
+        "vehicle": "sbb",
+        "warnings": []
+      },
+      "VIN_FUEL02": {
+        "as_of": {},
+        "attribution": [],
+        "decode": {},
+        "engine": "s111",
+        "engine_settled": true,
+        "id": "VIN_FUEL02",
+        "ratings": [],
+        "vehicle": "s115",
+        "warnings": []
+      }
+    }
+  },
+  "new": {
+    "vin_fuel": {
+      "vin_fuel_ref01": {
+        "as_of": {},
+        "attribution": [],
+        "decode": {},
+        "engine": "s16b",
+        "engine_settled": true,
+        "ratings": [],
+        "vehicle": "s16f",
+        "warnings": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vin/{vin}/fuel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

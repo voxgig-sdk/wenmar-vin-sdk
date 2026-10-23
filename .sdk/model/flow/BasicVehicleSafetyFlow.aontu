@@ -1,0 +1,22 @@
+# BasicVehicleSafetyFlow
+
+main: kit: flow: BasicVehicleSafetyFlow:
+{
+  entity: "vehicle_safety",
+  kind: "basic",
+  name: "BasicVehicleSafetyFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vehicle_safety_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVehicleSafetyFlow"
+}

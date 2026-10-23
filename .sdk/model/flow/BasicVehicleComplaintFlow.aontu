@@ -1,0 +1,22 @@
+# BasicVehicleComplaintFlow
+
+main: kit: flow: BasicVehicleComplaintFlow:
+{
+  entity: "vehicle_complaint",
+  kind: "basic",
+  name: "BasicVehicleComplaintFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vehicle_complaint_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVehicleComplaintFlow"
+}

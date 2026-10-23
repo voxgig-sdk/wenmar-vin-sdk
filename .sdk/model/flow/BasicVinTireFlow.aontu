@@ -1,0 +1,26 @@
+# BasicVinTireFlow
+
+main: kit: flow: BasicVinTireFlow:
+{
+  entity: "vin_tire",
+  kind: "basic",
+  name: "BasicVinTireFlow",
+  step: [
+    {
+      m: {
+        vin: "vin01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vin_tire_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVinTireFlow"
+}

@@ -1,0 +1,216 @@
+# Entity: vin_bulletin
+
+main: kit: entity: vin_bulletin: {
+
+  alias: field: {}
+
+  fields: {
+    as_of: {
+      h: "As Of"
+      n: "as_of"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      t: "`$ARRAY`"
+    }
+    bulletins: {
+      h: "Bulletins"
+      n: "bulletins"
+      r: true
+      t: "`$ARRAY`"
+    }
+    counts: {
+      h: "Counts"
+      n: "counts"
+      r: true
+      sh: "What the bulletins of one model year are, in numbers."
+      t: "`$OBJECT`"
+    }
+    decode: {
+      h: "Decode"
+      n: "decode"
+      r: true
+      sh: "What a VIN decoded to, as far as recalls need it."
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    next_cursor: {
+      h: "Next Cursor"
+      n: "next_cursor"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    note: {
+      h: "Note"
+      n: "note"
+      r: true
+      t: "`$STRING`"
+    }
+    vehicle: {
+      h: "Vehicle"
+      n: "vehicle"
+      r: false
+      t: "`$ANY`"
+    }
+    warnings: {
+      h: "Warnings"
+      n: "warnings"
+      r: true
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vin_bulletin"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vin/{vin}/bulletins"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "KM8K2CAB4PU001140"
+                k: "param"
+                n: "id"
+                or: "vin"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "P0420"
+                k: "query"
+                n: "code"
+                or: "code"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "brakes"
+                k: "query"
+                n: "component"
+                or: "component"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "noise"
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "topic"
+                or: "topic"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "warranty_extension"
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 2023
+                k: "query"
+                n: "year"
+                or: "year"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vin/{vin}/bulletins"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              vin: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vin"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "bulletins"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

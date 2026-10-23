@@ -1,0 +1,280 @@
+# Entity: vehicle_fuel
+
+main: kit: entity: vehicle_fuel: {
+
+  alias: field: {}
+
+  fields: {
+    co2_g_km: {
+      fo: "int32"
+      h: "Co2 G Km"
+      n: "co2_g_km"
+      r: false
+      sh: "Tailpipe carbon dioxide, combined."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    confidence: {
+      h: "Confidence"
+      n: "confidence"
+      r: true
+      sh: "How far the rating was matched: `model` (the model year only), `engine` (one engine) or `submodel` (an engine and a trim)."
+      t: "`$STRING`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: true
+      sh: "`us` or `ca`."
+      t: "`$STRING`"
+    }
+    cylinders: {
+      fo: "int32"
+      h: "Cylinders"
+      n: "cylinders"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    described_as: {
+      h: "Described As"
+      n: "described_as"
+      r: true
+      sh: "The source's own name for the vehicle rated."
+      t: "`$STRING`"
+    }
+    displacement_l: {
+      fo: "double"
+      h: "Displacement L"
+      n: "displacement_l"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$NUMBER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    drive: {
+      h: "Drive"
+      n: "drive"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    engine: {
+      h: "Engine"
+      n: "engine"
+      r: false
+      t: "`$ANY`"
+    }
+    fuel_grade: {
+      h: "Fuel Grade"
+      n: "fuel_grade"
+      r: true
+      sh: "The fuel the figures are for, which is the recommended grade."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    kwh_100km: {
+      fo: "double"
+      h: "Kwh 100km"
+      n: "kwh_100km"
+      r: false
+      sh: "Combined electricity use."
+      t: [
+        "`$ONE`"
+        [
+          "`$NUMBER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    l_100km: {
+      h: "L 100km"
+      n: "l_100km"
+      r: false
+      t: "`$ANY`"
+    }
+    match: {
+      h: "Match"
+      n: "match"
+      r: true
+      sh: "How the model was found: `exact`, `base` or `curated`."
+      t: "`$STRING`"
+    }
+    mpg: {
+      h: "Mpg"
+      n: "mpg"
+      r: false
+      t: "`$ANY`"
+    }
+    range_km: {
+      fo: "int32"
+      h: "Range Km"
+      n: "range_km"
+      r: false
+      sh: "On a full battery."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    range_mi: {
+      fo: "int32"
+      h: "Range Mi"
+      n: "range_mi"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    second_fuel: {
+      h: "Second Fuel"
+      n: "second_fuel"
+      r: false
+      sh: "A second fuel the vehicle takes, such as `E85` or `Electricity`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: true
+      sh: "`epa` or `nrcan`."
+      t: "`$STRING`"
+    }
+    source_id: {
+      h: "Source Id"
+      n: "source_id"
+      r: false
+      sh: "EPA's id for the rating."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    transmission: {
+      h: "Transmission"
+      n: "transmission"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vehicle_fuel"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/fuel"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "2018_ford_f-150"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/fuel"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "fuel"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.ratings`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

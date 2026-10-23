@@ -1,0 +1,96 @@
+{
+  "existing": {
+    "vehicle_recall": {
+      "VEHICLE_RECALL00": {
+        "built_from": "sb4",
+        "built_to": "sb5",
+        "campaign": "sb6",
+        "component": "sb7",
+        "country": "sb8",
+        "date": "sb9",
+        "do_not_drive": "sba",
+        "id": "VEHICLE_RECALL00",
+        "manufacturer": "sbc",
+        "match": "sbd",
+        "mfr_campaign": "sbe",
+        "models": [],
+        "notification": "sc0",
+        "park_outside": "sc1",
+        "source": "sc2",
+        "summary": "sc3",
+        "units": "sc4",
+        "url": "sc5"
+      },
+      "VEHICLE_RECALL01": {
+        "built_from": "s168",
+        "built_to": "s169",
+        "campaign": "s16a",
+        "component": "s16b",
+        "country": "s16c",
+        "date": "s16d",
+        "do_not_drive": "s16e",
+        "id": "VEHICLE_RECALL01",
+        "manufacturer": "s170",
+        "match": "s171",
+        "mfr_campaign": "s172",
+        "models": [],
+        "notification": "s174",
+        "park_outside": "s175",
+        "source": "s176",
+        "summary": "s177",
+        "units": "s178",
+        "url": "s179"
+      },
+      "VEHICLE_RECALL02": {
+        "built_from": "s21c",
+        "built_to": "s21d",
+        "campaign": "s21e",
+        "component": "s21f",
+        "country": "s220",
+        "date": "s221",
+        "do_not_drive": "s222",
+        "id": "VEHICLE_RECALL02",
+        "manufacturer": "s224",
+        "match": "s225",
+        "mfr_campaign": "s226",
+        "models": [],
+        "notification": "s228",
+        "park_outside": "s229",
+        "source": "s22a",
+        "summary": "s22b",
+        "units": "s22c",
+        "url": "s22d"
+      }
+    }
+  },
+  "new": {
+    "vehicle_recall": {
+      "vehicle_recall_ref01": {
+        "built_from": "s2d0",
+        "built_to": "s2d1",
+        "campaign": "s2d2",
+        "component": "s2d3",
+        "country": "s2d4",
+        "date": "s2d5",
+        "do_not_drive": "s2d6",
+        "manufacturer": "s2d8",
+        "match": "s2d9",
+        "mfr_campaign": "s2da",
+        "models": [],
+        "notification": "s2dc",
+        "park_outside": "s2dd",
+        "source": "s2de",
+        "summary": "s2df",
+        "units": "s2e0",
+        "url": "s2e1"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/{id}/recalls": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

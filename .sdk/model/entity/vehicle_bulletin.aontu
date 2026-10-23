@@ -1,0 +1,243 @@
+# Entity: vehicle_bulletin
+
+main: kit: entity: vehicle_bulletin: {
+
+  alias: field: {}
+
+  fields: {
+    component: {
+      h: "Component"
+      n: "component"
+      r: false
+      sh: "NHTSA's components, in its words, separated by `; `."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    date: {
+      h: "Date"
+      n: "date"
+      r: false
+      sh: "The manufacturer's own date."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    date_added: {
+      h: "Date Added"
+      n: "date_added"
+      r: true
+      sh: "The day NHTSA published it."
+      t: "`$STRING`"
+    }
+    document: {
+      h: "Document"
+      n: "document"
+      r: false
+      t: "`$ANY`"
+    }
+    document_id: {
+      h: "Document Id"
+      n: "document_id"
+      r: false
+      sh: "The manufacturer's own number for the document, which a dealer looks it up by."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    mfr_campaign: {
+      h: "Mfr Campaign"
+      n: "mfr_campaign"
+      r: false
+      sh: "The manufacturer's campaign id or software version."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    nhtsa_id: {
+      fo: "int64"
+      h: "Nhtsa Id"
+      n: "nhtsa_id"
+      r: true
+      sh: "NHTSA's id number for the communication."
+      t: "`$INTEGER`"
+    }
+    summary: {
+      h: "Summary"
+      n: "summary"
+      r: false
+      sh: "NHTSA's summary of the communication."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "`service_bulletin`, `service_campaign`, `warranty_extension`, `over_the_air`, `emissions` or `other`."
+      t: "`$STRING`"
+    }
+    type_name: {
+      h: "Type Name"
+      n: "type_name"
+      r: true
+      sh: "The type in words."
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The bulletin's page on this site."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vehicle_bulletin"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/bulletins"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "2018_ford_f-150"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "P0420"
+                k: "query"
+                n: "code"
+                or: "code"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "brakes"
+                k: "query"
+                n: "component"
+                or: "component"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "noise"
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "maintenance"
+                k: "query"
+                n: "topic"
+                or: "topic"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "warranty_extension"
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/bulletins"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "bulletins"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

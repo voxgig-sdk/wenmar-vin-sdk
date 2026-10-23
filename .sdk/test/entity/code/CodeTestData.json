@@ -1,0 +1,93 @@
+{
+  "existing": {
+    "code": {
+      "CODE00": {
+        "attribution": [],
+        "checked": "sa1",
+        "checks": [],
+        "code": "sa3",
+        "common_causes": [],
+        "components": [],
+        "generic": true,
+        "id": "CODE00",
+        "meaning": "sa8",
+        "note": "sa9",
+        "related": [],
+        "reviewer": "sab",
+        "system": "sac",
+        "system_name": "sad",
+        "title": "sae",
+        "url": "saf"
+      },
+      "CODE01": {
+        "attribution": [],
+        "checked": "s141",
+        "checks": [],
+        "code": "s143",
+        "common_causes": [],
+        "components": [],
+        "generic": true,
+        "id": "CODE01",
+        "meaning": "s148",
+        "note": "s149",
+        "related": [],
+        "reviewer": "s14b",
+        "system": "s14c",
+        "system_name": "s14d",
+        "title": "s14e",
+        "url": "s14f"
+      },
+      "CODE02": {
+        "attribution": [],
+        "checked": "s1e1",
+        "checks": [],
+        "code": "s1e3",
+        "common_causes": [],
+        "components": [],
+        "generic": true,
+        "id": "CODE02",
+        "meaning": "s1e8",
+        "note": "s1e9",
+        "related": [],
+        "reviewer": "s1eb",
+        "system": "s1ec",
+        "system_name": "s1ed",
+        "title": "s1ee",
+        "url": "s1ef"
+      }
+    }
+  },
+  "new": {
+    "code": {
+      "code_ref01": {
+        "attribution": [],
+        "checked": "s281",
+        "checks": [],
+        "code": "s283",
+        "common_causes": [],
+        "components": [],
+        "generic": true,
+        "meaning": "s288",
+        "note": "s289",
+        "related": [],
+        "reviewer": "s28b",
+        "system": "s28c",
+        "system_name": "s28d",
+        "title": "s28e",
+        "url": "s28f"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/codes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/codes/{code}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

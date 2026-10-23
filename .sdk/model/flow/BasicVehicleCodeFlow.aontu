@@ -1,0 +1,33 @@
+# BasicVehicleCodeFlow
+
+main: kit: flow: BasicVehicleCodeFlow:
+{
+  entity: "vehicle_code",
+  kind: "basic",
+  name: "BasicVehicleCodeFlow",
+  step: [
+    {
+      i: {
+        ref: "vehicle_code_ref01",
+        srcdatavar: "vehicle_code_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "vehicle_code01",
+        vehicle_id: "vehicle01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-vehicle_code_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVehicleCodeFlow"
+}

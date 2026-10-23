@@ -1,0 +1,359 @@
+# Entity: vin
+
+main: kit: entity: vin: {
+
+  alias: field: {}
+
+  fields: {
+    base_price_usd: {
+      fo: "double"
+      h: "Base Price Usd"
+      n: "base_price_usd"
+      r: false
+      sh: "Manufacturer base price in US dollars, when NHTSA has one."
+      t: [
+        "`$ONE`"
+        [
+          "`$NUMBER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    body: {
+      h: "Body"
+      n: "body"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    catalog: {
+      h: "Catalog"
+      n: "catalog"
+      r: false
+      t: "`$ANY`"
+    }
+    check_digit: {
+      h: "Check Digit"
+      n: "check_digit"
+      r: true
+      t: "`$OBJECT`"
+    }
+    doors: {
+      fo: "int32"
+      h: "Doors"
+      n: "doors"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    drivetrain: {
+      h: "Drivetrain"
+      n: "drivetrain"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    engine: {
+      h: "Engine"
+      n: "engine"
+      r: false
+      t: "`$ANY`"
+    }
+    gvwr: {
+      h: "Gvwr"
+      n: "gvwr"
+      r: false
+      sh: "Gross vehicle weight rating class, as NHTSA words it."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    make: {
+      h: "Make"
+      n: "make"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    manufacturer: {
+      h: "Manufacturer"
+      n: "manufacturer"
+      r: true
+      t: "`$OBJECT`"
+    }
+    model: {
+      h: "Model"
+      n: "model"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    plant: {
+      h: "Plant"
+      n: "plant"
+      r: true
+      sh: "Where the vehicle was built."
+      t: "`$OBJECT`"
+    }
+    recalls: {
+      h: "Recalls"
+      n: "recalls"
+      r: false
+      t: "`$ANY`"
+    }
+    safety: {
+      h: "Safety"
+      n: "safety"
+      r: false
+      t: "`$ANY`"
+    }
+    seat_rows: {
+      fo: "int32"
+      h: "Seat Rows"
+      n: "seat_rows"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    seats: {
+      fo: "int32"
+      h: "Seats"
+      n: "seats"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    series: {
+      h: "Series"
+      n: "series"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    transmission: {
+      h: "Transmission"
+      n: "transmission"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    transmission_speeds: {
+      fo: "int32"
+      h: "Transmission Speeds"
+      n: "transmission_speeds"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    trim: {
+      h: "Trim"
+      n: "trim"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    valid: {
+      h: "Valid"
+      n: "valid"
+      r: true
+      sh: "Whether the check digit, position 9, is right."
+      t: "`$BOOLEAN`"
+    }
+    vin: {
+      h: "Vin"
+      n: "vin"
+      r: true
+      t: "`$STRING`"
+    }
+    warnings: {
+      h: "Warnings"
+      n: "warnings"
+      r: true
+      sh: "Things to know about a decode that still succeeded."
+      t: "`$ARRAY`"
+    }
+    wheel_size_front: {
+      fo: "int32"
+      h: "Wheel Size Front"
+      n: "wheel_size_front"
+      r: false
+      sh: "Front wheel diameter in inches."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    wheel_size_rear: {
+      fo: "int32"
+      h: "Wheel Size Rear"
+      n: "wheel_size_rear"
+      r: false
+      sh: "Rear wheel diameter in inches."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    year: {
+      fo: "int32"
+      h: "Year"
+      n: "year"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vin"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vin/{vin}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "KM8K2CAB4PU001140"
+                k: "param"
+                n: "id"
+                or: "vin"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 2023
+                k: "query"
+                n: "year"
+                or: "year"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vin/{vin}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              vin: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vin"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

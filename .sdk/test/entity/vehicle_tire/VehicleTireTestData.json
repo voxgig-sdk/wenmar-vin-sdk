@@ -1,0 +1,80 @@
+{
+  "existing": {
+    "vehicle_tire": {
+      "VEHICLE_TIRE00": {
+        "bolt_pattern": "s8c",
+        "checked": "s8d",
+        "id": "VEHICLE_TIRE00",
+        "lug_torque_lbft": "s8f",
+        "lug_torque_nm": "s90",
+        "lug_torque_written_in": "s91",
+        "market": "s92",
+        "pressure_kpa": "s93",
+        "pressure_psi": "s94",
+        "pressure_written_in": "s95",
+        "size": "s96",
+        "size_rear": "s97",
+        "source": "s98",
+        "trims": []
+      },
+      "VEHICLE_TIRE01": {
+        "bolt_pattern": "s118",
+        "checked": "s119",
+        "id": "VEHICLE_TIRE01",
+        "lug_torque_lbft": "s11b",
+        "lug_torque_nm": "s11c",
+        "lug_torque_written_in": "s11d",
+        "market": "s11e",
+        "pressure_kpa": "s11f",
+        "pressure_psi": "s120",
+        "pressure_written_in": "s121",
+        "size": "s122",
+        "size_rear": "s123",
+        "source": "s124",
+        "trims": []
+      },
+      "VEHICLE_TIRE02": {
+        "bolt_pattern": "s1a4",
+        "checked": "s1a5",
+        "id": "VEHICLE_TIRE02",
+        "lug_torque_lbft": "s1a7",
+        "lug_torque_nm": "s1a8",
+        "lug_torque_written_in": "s1a9",
+        "market": "s1aa",
+        "pressure_kpa": "s1ab",
+        "pressure_psi": "s1ac",
+        "pressure_written_in": "s1ad",
+        "size": "s1ae",
+        "size_rear": "s1af",
+        "source": "s1b0",
+        "trims": []
+      }
+    }
+  },
+  "new": {
+    "vehicle_tire": {
+      "vehicle_tire_ref01": {
+        "bolt_pattern": "s230",
+        "checked": "s231",
+        "lug_torque_lbft": "s233",
+        "lug_torque_nm": "s234",
+        "lug_torque_written_in": "s235",
+        "market": "s236",
+        "pressure_kpa": "s237",
+        "pressure_psi": "s238",
+        "pressure_written_in": "s239",
+        "size": "s23a",
+        "size_rear": "s23b",
+        "source": "s23c",
+        "trims": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/{id}/tires": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

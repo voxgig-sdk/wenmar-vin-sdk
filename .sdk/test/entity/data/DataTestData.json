@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "data": {
+      "DATA00": {
+        "built_at": "s32",
+        "data_version": "s33",
+        "datasets": {},
+        "server_version": "s35",
+        "vpic_release": "s36",
+        "id": "DATA00"
+      },
+      "DATA01": {
+        "built_at": "s64",
+        "data_version": "s65",
+        "datasets": {},
+        "server_version": "s67",
+        "vpic_release": "s68",
+        "id": "DATA01"
+      },
+      "DATA02": {
+        "built_at": "s96",
+        "data_version": "s97",
+        "datasets": {},
+        "server_version": "s99",
+        "vpic_release": "s9a",
+        "id": "DATA02"
+      }
+    }
+  },
+  "new": {
+    "data": {
+      "data_ref01": {
+        "built_at": "sc8",
+        "data_version": "sc9",
+        "datasets": {},
+        "server_version": "scb",
+        "vpic_release": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/meta": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

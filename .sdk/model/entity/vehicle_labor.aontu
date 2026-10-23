@@ -1,0 +1,298 @@
+# Entity: vehicle_labor
+
+main: kit: entity: vehicle_labor: {
+
+  alias: field: {}
+
+  fields: {
+    as_of: {
+      h: "As Of"
+      n: "as_of"
+      r: false
+      sh: "The newest day an estimate was changed."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      t: "`$ARRAY`"
+    }
+    basis: {
+      h: "Basis"
+      n: "basis"
+      r: true
+      sh: "`expert`: written by a person who does the work."
+      t: "`$STRING`"
+    }
+    class: {
+      h: "Class"
+      n: "class"
+      r: false
+      sh: "The class, for a class-scope figure."
+      t: "`$ANY`"
+    }
+    class_name: {
+      h: "Class Name"
+      n: "class_name"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    engine: {
+      h: "Engine"
+      n: "engine"
+      r: false
+      sh: "The engine the vehicle id named, as an id form."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    estimates: {
+      h: "Estimates"
+      n: "estimates"
+      r: true
+      sh: "One for each job that has a figure covering the vehicle, in the order of the job list."
+      t: "`$ARRAY`"
+    }
+    hours: {
+      h: "Hours"
+      n: "hours"
+      r: true
+      sh: "Hours, as numbers of hours."
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    job: {
+      h: "Job"
+      n: "job"
+      r: true
+      sh: "The job's id."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    note: {
+      h: "Note"
+      n: "note"
+      r: true
+      sh: "\"An estimate, not a quote."
+      t: "`$STRING`"
+    }
+    notes: {
+      h: "Notes"
+      n: "notes"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    sample: {
+      h: "Sample"
+      n: "sample"
+      r: false
+      t: "`$ANY`"
+    }
+    scope: {
+      h: "Scope"
+      n: "scope"
+      r: true
+      sh: "What the figure is for, and so how far to trust it for one vehicle: `engine`, `generation`, `model` or `class`."
+      t: "`$STRING`"
+    }
+    updated: {
+      h: "Updated"
+      n: "updated"
+      r: true
+      sh: "The day the figure was last changed."
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The job's page on this site."
+      t: "`$STRING`"
+    }
+    vehicle: {
+      h: "Vehicle"
+      n: "vehicle"
+      r: true
+      sh: "The model year an answer is about."
+      t: "`$OBJECT`"
+    }
+    years: {
+      h: "Years"
+      n: "years"
+      r: false
+      t: "`$ANY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vehicle_labor"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/labor"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "2018_ford_f-150"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/labor"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "labor"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/labor/{job}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "brake-pads-front"
+                k: "param"
+                n: "id"
+                or: "job"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "2018_ford_f-150"
+                k: "param"
+                n: "vehicle_id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/labor/{job}"
+          q: {
+            exist: [
+              "id"
+              "vehicle_id"
+            ]
+          }
+          r: {
+            param: {
+              id: "vehicle_id"
+              job: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "vehicle_id"
+            }
+            {
+              lit: "labor"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.vehicle")]
+  ]
+
+}

@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "engine": {
+      "ENGINE00": {
+        "id": "ENGINE00",
+        "label": "s29",
+        "preset": true,
+        "vin8": "s2b"
+      },
+      "ENGINE01": {
+        "id": "ENGINE01",
+        "label": "s51",
+        "preset": true,
+        "vin8": "s53"
+      },
+      "ENGINE02": {
+        "id": "ENGINE02",
+        "label": "s79",
+        "preset": true,
+        "vin8": "s7b"
+      }
+    }
+  },
+  "new": {
+    "engine": {
+      "engine_ref01": {
+        "label": "sa1",
+        "preset": true,
+        "vin8": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/engines": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

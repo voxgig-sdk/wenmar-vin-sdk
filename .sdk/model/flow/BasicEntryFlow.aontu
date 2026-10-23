@@ -1,0 +1,44 @@
+# BasicEntryFlow
+
+main: kit: flow: BasicEntryFlow:
+{
+  entity: "entry",
+  kind: "basic",
+  name: "BasicEntryFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "entry_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "entry_ref01",
+        srcdatavar: "entry_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "entry01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-entry_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEntryFlow"
+}

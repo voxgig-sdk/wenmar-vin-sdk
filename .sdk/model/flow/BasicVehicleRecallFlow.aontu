@@ -1,0 +1,22 @@
+# BasicVehicleRecallFlow
+
+main: kit: flow: BasicVehicleRecallFlow:
+{
+  entity: "vehicle_recall",
+  kind: "basic",
+  name: "BasicVehicleRecallFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vehicle_recall_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVehicleRecallFlow"
+}

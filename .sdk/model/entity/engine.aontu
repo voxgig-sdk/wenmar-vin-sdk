@@ -1,0 +1,136 @@
+# Entity: engine
+
+main: kit: entity: engine: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$STRING`"
+    }
+    label: {
+      h: "Label"
+      n: "label"
+      r: true
+      t: "`$STRING`"
+    }
+    preset: {
+      h: "Preset"
+      n: "preset"
+      r: true
+      sh: "Whether the engine comes from this project's list instead of NHTSA."
+      t: "`$BOOLEAN`"
+    }
+    vin8: {
+      h: "Vin8"
+      n: "vin8"
+      r: false
+      sh: "The characters in position 8 of a VIN that mean this engine and no other for this model year, where the data settles it."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "engine"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/engines"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "honda"
+                k: "query"
+                n: "make"
+                or: "make"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "civic"
+                k: "query"
+                n: "model"
+                or: "model"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "si"
+                k: "query"
+                n: "submodel"
+                or: "submodel"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "term"
+                or: "term"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 2019
+                k: "query"
+                n: "year"
+                or: "year"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/engines"
+          q: {
+            exist: [
+              "make"
+              "model"
+              "year"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              lit: "engines"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

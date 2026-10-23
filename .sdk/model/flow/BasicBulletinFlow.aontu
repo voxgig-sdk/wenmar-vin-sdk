@@ -1,0 +1,44 @@
+# BasicBulletinFlow
+
+main: kit: flow: BasicBulletinFlow:
+{
+  entity: "bulletin",
+  kind: "basic",
+  name: "BasicBulletinFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "bulletin_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "bulletin_ref01",
+        srcdatavar: "bulletin_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "bulletin01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-bulletin_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicBulletinFlow"
+}

@@ -1,0 +1,49 @@
+# BasicVinLaborFlow
+
+main: kit: flow: BasicVinLaborFlow:
+{
+  entity: "vin_labor",
+  kind: "basic",
+  name: "BasicVinLaborFlow",
+  step: [
+    {
+      m: {
+        vin: "vin01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vin_labor_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "vin_labor_ref01",
+        srcdatavar: "vin_labor_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "vin_labor01",
+        vin_id: "vin01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-vin_labor_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVinLaborFlow"
+}

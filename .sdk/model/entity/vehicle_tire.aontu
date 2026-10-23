@@ -1,0 +1,207 @@
+# Entity: vehicle_tire
+
+main: kit: entity: vehicle_tire: {
+
+  alias: field: {}
+
+  fields: {
+    bolt_pattern: {
+      h: "Bolt Pattern"
+      n: "bolt_pattern"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    checked: {
+      h: "Checked"
+      n: "checked"
+      r: true
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    lug_torque_lbft: {
+      fo: "int64"
+      h: "Lug Torque Lbft"
+      n: "lug_torque_lbft"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    lug_torque_nm: {
+      fo: "int64"
+      h: "Lug Torque Nm"
+      n: "lug_torque_nm"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    lug_torque_written_in: {
+      h: "Lug Torque Written In"
+      n: "lug_torque_written_in"
+      r: false
+      sh: "`nm` or `lbft`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    market: {
+      h: "Market"
+      n: "market"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    pressure_kpa: {
+      h: "Pressure Kpa"
+      n: "pressure_kpa"
+      r: false
+      t: "`$ANY`"
+    }
+    pressure_psi: {
+      h: "Pressure Psi"
+      n: "pressure_psi"
+      r: false
+      t: "`$ANY`"
+    }
+    pressure_written_in: {
+      h: "Pressure Written In"
+      n: "pressure_written_in"
+      r: false
+      sh: "The unit the document printed: `kpa`, `bar` or `psi`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    size: {
+      h: "Size"
+      n: "size"
+      r: true
+      sh: "The size as printed."
+      t: "`$STRING`"
+    }
+    size_rear: {
+      h: "Size Rear"
+      n: "size_rear"
+      r: false
+      sh: "The rear size, only when it differs from the front."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: true
+      t: "`$STRING`"
+    }
+    trims: {
+      h: "Trims"
+      n: "trims"
+      r: true
+      sh: "The trims the document ties the size to, as it names them."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vehicle_tire"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/tires"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "2018_ford_f-150"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/tires"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "tires"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

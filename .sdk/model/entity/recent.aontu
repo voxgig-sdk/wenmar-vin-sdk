@@ -1,0 +1,112 @@
+# Entity: recent
+
+main: kit: entity: recent: {
+
+  alias: field: {}
+
+  fields: {
+    recall: {
+      h: "Recall"
+      n: "recall"
+      r: true
+      sh: "One recall campaign in a list."
+      t: "`$OBJECT`"
+    }
+    vehicles: {
+      h: "Vehicles"
+      n: "vehicles"
+      r: true
+      sh: "The vehicles the campaign lists: at most 200 of them."
+      t: "`$ARRAY`"
+    }
+    vehicles_listed: {
+      fo: "int32"
+      h: "Vehicles Listed"
+      n: "vehicles_listed"
+      r: true
+      sh: "How many vehicles the campaign lists in all."
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "recent"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/recalls/recent"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "ford"
+                k: "query"
+                n: "make"
+                or: "make"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "2026-09-01"
+                k: "query"
+                n: "since"
+                or: "since"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/recalls/recent"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "recalls"
+            }
+            {
+              lit: "recent"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

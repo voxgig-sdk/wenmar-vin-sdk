@@ -1,0 +1,64 @@
+{
+  "existing": {
+    "vin_bulletin": {
+      "VIN_BULLETIN00": {
+        "as_of": "s64",
+        "attribution": [],
+        "bulletins": [],
+        "counts": {},
+        "decode": {},
+        "id": "VIN_BULLETIN00",
+        "next_cursor": "s6a",
+        "note": "s6b",
+        "vehicle": "s6c",
+        "warnings": []
+      },
+      "VIN_BULLETIN01": {
+        "as_of": "sc8",
+        "attribution": [],
+        "bulletins": [],
+        "counts": {},
+        "decode": {},
+        "id": "VIN_BULLETIN01",
+        "next_cursor": "sce",
+        "note": "scf",
+        "vehicle": "sd0",
+        "warnings": []
+      },
+      "VIN_BULLETIN02": {
+        "as_of": "s12c",
+        "attribution": [],
+        "bulletins": [],
+        "counts": {},
+        "decode": {},
+        "id": "VIN_BULLETIN02",
+        "next_cursor": "s132",
+        "note": "s133",
+        "vehicle": "s134",
+        "warnings": []
+      }
+    }
+  },
+  "new": {
+    "vin_bulletin": {
+      "vin_bulletin_ref01": {
+        "as_of": "s190",
+        "attribution": [],
+        "bulletins": [],
+        "counts": {},
+        "decode": {},
+        "next_cursor": "s196",
+        "note": "s197",
+        "vehicle": "s198",
+        "warnings": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vin/{vin}/bulletins": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

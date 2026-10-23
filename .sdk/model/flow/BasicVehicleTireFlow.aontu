@@ -1,0 +1,22 @@
+# BasicVehicleTireFlow
+
+main: kit: flow: BasicVehicleTireFlow:
+{
+  entity: "vehicle_tire",
+  kind: "basic",
+  name: "BasicVehicleTireFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vehicle_tire_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVehicleTireFlow"
+}

@@ -1,0 +1,497 @@
+# Entity: recall
+
+main: kit: entity: recall: {
+
+  alias: field: {}
+
+  fields: {
+    as_of: {
+      h: "As Of"
+      n: "as_of"
+      r: false
+      sh: "The day this publisher's data was current."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      t: "`$ARRAY`"
+    }
+    built_from: {
+      h: "Built From"
+      n: "built_from"
+      r: false
+      sh: "In an answer about one model year: the first and last build date the campaign gives."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    built_to: {
+      h: "Built To"
+      n: "built_to"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    campaign: {
+      h: "Campaign"
+      n: "campaign"
+      r: true
+      sh: "The publisher's campaign number."
+      t: "`$STRING`"
+    }
+    completion: {
+      h: "Completion"
+      n: "completion"
+      r: false
+      t: "`$ANY`"
+    }
+    component: {
+      h: "Component"
+      n: "component"
+      r: false
+      sh: "The component, as the source words it."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    consequence: {
+      h: "Consequence"
+      n: "consequence"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: true
+      sh: "`us` or `ca`."
+      t: "`$STRING`"
+    }
+    date: {
+      h: "Date"
+      n: "date"
+      r: false
+      sh: "The day the campaign was reported."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    do_not_drive: {
+      h: "Do Not Drive"
+      n: "do_not_drive"
+      r: false
+      sh: "NHTSA's advisory not to drive the vehicle until it is repaired."
+      t: [
+        "`$ONE`"
+        [
+          "`$BOOLEAN`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    french: {
+      h: "French"
+      n: "french"
+      r: false
+      t: "`$ANY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    lookup: {
+      h: "Lookup"
+      n: "lookup"
+      r: true
+      sh: "Where to check one vehicle for open recalls."
+      t: "`$OBJECT`"
+    }
+    manufacturer: {
+      h: "Manufacturer"
+      n: "manufacturer"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    match: {
+      h: "Match"
+      n: "match"
+      r: false
+      sh: "In an answer about one model year: how the campaign's vehicle text reached that model."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    may_apply: {
+      h: "May Apply"
+      n: "may_apply"
+      r: true
+      sh: "Always `true`: the campaign may apply to a vehicle it lists."
+      t: "`$BOOLEAN`"
+    }
+    mfr_campaign: {
+      h: "Mfr Campaign"
+      n: "mfr_campaign"
+      r: false
+      sh: "The manufacturer's own campaign number, which a dealer looks a recall up by."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    models: {
+      h: "Models"
+      n: "models"
+      r: true
+      sh: "In an answer about one model year: the model names the campaign lists that reached it."
+      t: "`$ARRAY`"
+    }
+    notes: {
+      h: "Notes"
+      n: "notes"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    notification: {
+      h: "Notification"
+      n: "notification"
+      r: false
+      sh: "Transport Canada's notification type, such as `Safety Mfr`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    owner_notified: {
+      h: "Owner Notified"
+      n: "owner_notified"
+      r: false
+      sh: "The day owners were notified."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    park_outside: {
+      h: "Park Outside"
+      n: "park_outside"
+      r: false
+      sh: "NHTSA's advisory to park outside, away from buildings."
+      t: [
+        "`$ONE`"
+        [
+          "`$BOOLEAN`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    part_number: {
+      h: "Part Number"
+      n: "part_number"
+      r: false
+      sh: "The manufacturer's part numbers, separated by commas."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    remedy: {
+      h: "Remedy"
+      n: "remedy"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: true
+      sh: "Who published it: `nhtsa` or `tc` (Transport Canada)."
+      t: "`$STRING`"
+    }
+    summary: {
+      h: "Summary"
+      n: "summary"
+      r: false
+      sh: "What is wrong, in the source's words."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    units: {
+      fo: "int32"
+      h: "Units"
+      n: "units"
+      r: false
+      sh: "Units potentially affected."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The campaign's page on this site."
+      t: "`$STRING`"
+    }
+    vehicles: {
+      h: "Vehicles"
+      n: "vehicles"
+      r: true
+      sh: "Every vehicle the campaign lists, by make, model and year."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    from: {
+      campaign: "campaign"
+      source: "source"
+    }
+    name: "id"
+    parts: [
+      "source"
+      "campaign"
+    ]
+    sep: "/"
+  }
+
+  name: "recall"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/recalls"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "air bags"
+                k: "query"
+                n: "component"
+                or: "component"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "ford"
+                k: "query"
+                n: "make"
+                or: "make"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "f-150"
+                k: "query"
+                n: "model"
+                or: "model"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "tailgate"
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 2018
+                k: "query"
+                n: "year"
+                or: "year"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/recalls"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "recalls"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/recalls/{source}/{campaign}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "19V888000"
+                k: "param"
+                n: "campaign"
+                or: "campaign"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "nhtsa"
+                k: "param"
+                n: "source"
+                or: "source"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/recalls/{source}/{campaign}"
+          q: {
+            exist: [
+              "campaign"
+              "source"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "recalls"
+            }
+            {
+              var: "source"
+            }
+            {
+              var: "campaign"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

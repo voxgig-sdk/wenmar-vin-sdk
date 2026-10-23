@@ -1,0 +1,130 @@
+# Entity: parts_card
+
+main: kit: entity: parts_card: {
+
+  alias: field: {}
+
+  fields: {
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      t: "`$ARRAY`"
+    }
+    engine_settled: {
+      h: "Engine Settled"
+      n: "engine_settled"
+      r: true
+      sh: "Whether the decode settled one catalog engine."
+      t: "`$BOOLEAN`"
+    }
+    lines: {
+      h: "Lines"
+      n: "lines"
+      r: true
+      t: "`$ARRAY`"
+    }
+    text: {
+      h: "Text"
+      n: "text"
+      r: true
+      sh: "The lines as plain text, one `Label: value` each."
+      t: "`$STRING`"
+    }
+    vehicle: {
+      h: "Vehicle"
+      n: "vehicle"
+      r: false
+      t: "`$ANY`"
+    }
+    vin: {
+      h: "Vin"
+      n: "vin"
+      r: true
+      t: "`$STRING`"
+    }
+    warnings: {
+      h: "Warnings"
+      n: "warnings"
+      r: true
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "parts_card"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vin/{vin}/parts-card"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "KM8K2CAB4PU001140"
+                k: "param"
+                n: "vin_id"
+                or: "vin"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "year"
+                or: "year"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vin/{vin}/parts-card"
+          q: {
+            exist: [
+              "vin_id"
+            ]
+          }
+          r: {
+            param: {
+              vin: "vin_id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vin"
+            }
+            {
+              var: "vin_id"
+            }
+            {
+              lit: "parts-card"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.vin")]
+  ]
+
+}

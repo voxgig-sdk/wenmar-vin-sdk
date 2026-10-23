@@ -1,0 +1,138 @@
+# Entity: vin_tire
+
+main: kit: entity: vin_tire: {
+
+  alias: field: {}
+
+  fields: {
+    as_of: {
+      h: "As Of"
+      n: "as_of"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      t: "`$ARRAY`"
+    }
+    decode: {
+      h: "Decode"
+      n: "decode"
+      r: true
+      sh: "What a VIN decoded to, as far as recalls need it."
+      t: "`$OBJECT`"
+    }
+    fitments: {
+      h: "Fitments"
+      n: "fitments"
+      r: true
+      sh: "Every fitment of the model year."
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    vehicle: {
+      h: "Vehicle"
+      n: "vehicle"
+      r: false
+      t: "`$ANY`"
+    }
+    warnings: {
+      h: "Warnings"
+      n: "warnings"
+      r: true
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vin_tire"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vin/{vin}/tires"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "KM8K2CAB4PU001140"
+                k: "param"
+                n: "id"
+                or: "vin"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "year"
+                or: "year"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vin/{vin}/tires"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              vin: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vin"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "tires"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

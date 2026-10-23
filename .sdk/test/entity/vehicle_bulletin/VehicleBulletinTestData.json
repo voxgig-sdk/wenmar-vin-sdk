@@ -1,0 +1,72 @@
+{
+  "existing": {
+    "vehicle_bulletin": {
+      "VEHICLE_BULLETIN00": {
+        "component": "s78",
+        "date": "s79",
+        "date_added": "s7a",
+        "document": "s7b",
+        "document_id": "DOCUMENT01",
+        "id": "VEHICLE_BULLETIN00",
+        "mfr_campaign": "s7e",
+        "nhtsa_id": "NHTSA01",
+        "summary": "s80",
+        "type": "s81",
+        "type_name": "s82",
+        "url": "s83"
+      },
+      "VEHICLE_BULLETIN01": {
+        "component": "sf0",
+        "date": "sf1",
+        "date_added": "sf2",
+        "document": "sf3",
+        "document_id": "DOCUMENT01",
+        "id": "VEHICLE_BULLETIN01",
+        "mfr_campaign": "sf6",
+        "nhtsa_id": "NHTSA01",
+        "summary": "sf8",
+        "type": "sf9",
+        "type_name": "sfa",
+        "url": "sfb"
+      },
+      "VEHICLE_BULLETIN02": {
+        "component": "s168",
+        "date": "s169",
+        "date_added": "s16a",
+        "document": "s16b",
+        "document_id": "DOCUMENT01",
+        "id": "VEHICLE_BULLETIN02",
+        "mfr_campaign": "s16e",
+        "nhtsa_id": "NHTSA01",
+        "summary": "s170",
+        "type": "s171",
+        "type_name": "s172",
+        "url": "s173"
+      }
+    }
+  },
+  "new": {
+    "vehicle_bulletin": {
+      "vehicle_bulletin_ref01": {
+        "component": "s1e0",
+        "date": "s1e1",
+        "date_added": "s1e2",
+        "document": "s1e3",
+        "document_id": "DOCUMENT01",
+        "mfr_campaign": "s1e6",
+        "nhtsa_id": "NHTSA01",
+        "summary": "s1e8",
+        "type": "s1e9",
+        "type_name": "s1ea",
+        "url": "s1eb"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/{id}/bulletins": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

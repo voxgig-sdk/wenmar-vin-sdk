@@ -1,0 +1,27 @@
+# BasicRecallInvestigationFlow
+
+main: kit: flow: BasicRecallInvestigationFlow:
+{
+  entity: "recall_investigation",
+  kind: "basic",
+  name: "BasicRecallInvestigationFlow",
+  step: [
+    {
+      m: {
+        campaign: "campaign01",
+        recall_id: "recall01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "recall_investigation_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRecallInvestigationFlow"
+}

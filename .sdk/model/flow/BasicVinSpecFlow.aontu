@@ -1,0 +1,26 @@
+# BasicVinSpecFlow
+
+main: kit: flow: BasicVinSpecFlow:
+{
+  entity: "vin_spec",
+  kind: "basic",
+  name: "BasicVinSpecFlow",
+  step: [
+    {
+      m: {
+        vin: "vin01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vin_spec_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVinSpecFlow"
+}

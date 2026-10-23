@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "vehicle_complaint": {
+      "VEHICLE_COMPLAINT00": {
+        "complaints": 90,
+        "crashes": 91,
+        "fires": 92,
+        "id": "VEHICLE_COMPLAINT00",
+        "injuries": 94,
+        "median_km": "s5f",
+        "median_miles": "s60",
+        "name": "s61",
+        "parent": "s62"
+      },
+      "VEHICLE_COMPLAINT01": {
+        "complaints": 180,
+        "crashes": 181,
+        "fires": 182,
+        "id": "VEHICLE_COMPLAINT01",
+        "injuries": 184,
+        "median_km": "sb9",
+        "median_miles": "sba",
+        "name": "sbb",
+        "parent": "sbc"
+      },
+      "VEHICLE_COMPLAINT02": {
+        "complaints": 270,
+        "crashes": 271,
+        "fires": 272,
+        "id": "VEHICLE_COMPLAINT02",
+        "injuries": 274,
+        "median_km": "s113",
+        "median_miles": "s114",
+        "name": "s115",
+        "parent": "s116"
+      }
+    }
+  },
+  "new": {
+    "vehicle_complaint": {
+      "vehicle_complaint_ref01": {
+        "complaints": 360,
+        "crashes": 361,
+        "fires": 362,
+        "injuries": 364,
+        "median_km": "s16d",
+        "median_miles": "s16e",
+        "name": "s16f",
+        "parent": "s170"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/{id}/complaints": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

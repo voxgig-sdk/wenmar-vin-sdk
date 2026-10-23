@@ -1,0 +1,56 @@
+{
+  "existing": {
+    "parts_card": {
+      "PARTS_CARD00": {
+        "attribution": [],
+        "engine_settled": false,
+        "lines": [],
+        "text": "s49",
+        "vehicle": "s4a",
+        "vin": "s4b",
+        "warnings": [],
+        "vin_id": "VIN01"
+      },
+      "PARTS_CARD01": {
+        "attribution": [],
+        "engine_settled": false,
+        "lines": [],
+        "text": "s8f",
+        "vehicle": "s90",
+        "vin": "s91",
+        "warnings": [],
+        "vin_id": "VIN01"
+      },
+      "PARTS_CARD02": {
+        "attribution": [],
+        "engine_settled": false,
+        "lines": [],
+        "text": "sd5",
+        "vehicle": "sd6",
+        "vin": "sd7",
+        "warnings": [],
+        "vin_id": "VIN01"
+      }
+    }
+  },
+  "new": {
+    "parts_card": {
+      "parts_card_ref01": {
+        "attribution": [],
+        "engine_settled": false,
+        "lines": [],
+        "text": "s11b",
+        "vehicle": "s11c",
+        "vin": "s11d",
+        "warnings": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vin/{vin}/parts-card": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "existing": {
+    "entry": {
+      "ENTRY00": {
+        "body": "s6e",
+        "drive": "s6f",
+        "engine": "s70",
+        "id": "ENTRY00",
+        "make": "s72",
+        "model": "s73",
+        "submodel": "s74",
+        "summary": "s75",
+        "transmission": "s76",
+        "vehicle_types": [],
+        "year": 120
+      },
+      "ENTRY01": {
+        "body": "sdc",
+        "drive": "sdd",
+        "engine": "sde",
+        "id": "ENTRY01",
+        "make": "se0",
+        "model": "se1",
+        "submodel": "se2",
+        "summary": "se3",
+        "transmission": "se4",
+        "vehicle_types": [],
+        "year": 230
+      },
+      "ENTRY02": {
+        "body": "s14a",
+        "drive": "s14b",
+        "engine": "s14c",
+        "id": "ENTRY02",
+        "make": "s14e",
+        "model": "s14f",
+        "submodel": "s150",
+        "summary": "s151",
+        "transmission": "s152",
+        "vehicle_types": [],
+        "year": 340
+      }
+    }
+  },
+  "new": {
+    "entry": {
+      "entry_ref01": {
+        "body": "s1b8",
+        "drive": "s1b9",
+        "engine": "s1ba",
+        "make": "s1bc",
+        "model": "s1bd",
+        "submodel": "s1be",
+        "summary": "s1bf",
+        "transmission": "s1c0",
+        "vehicle_types": [],
+        "year": 450
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/search": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/vehicles/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

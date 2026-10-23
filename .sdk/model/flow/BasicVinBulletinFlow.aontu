@@ -1,0 +1,26 @@
+# BasicVinBulletinFlow
+
+main: kit: flow: BasicVinBulletinFlow:
+{
+  entity: "vin_bulletin",
+  kind: "basic",
+  name: "BasicVinBulletinFlow",
+  step: [
+    {
+      m: {
+        vin: "vin01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vin_bulletin_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVinBulletinFlow"
+}

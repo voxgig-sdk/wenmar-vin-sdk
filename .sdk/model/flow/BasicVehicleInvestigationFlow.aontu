@@ -1,0 +1,22 @@
+# BasicVehicleInvestigationFlow
+
+main: kit: flow: BasicVehicleInvestigationFlow:
+{
+  entity: "vehicle_investigation",
+  kind: "basic",
+  name: "BasicVehicleInvestigationFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vehicle_investigation_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVehicleInvestigationFlow"
+}

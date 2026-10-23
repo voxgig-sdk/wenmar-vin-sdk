@@ -1,0 +1,26 @@
+# BasicVinFuelFlow
+
+main: kit: flow: BasicVinFuelFlow:
+{
+  entity: "vin_fuel",
+  kind: "basic",
+  name: "BasicVinFuelFlow",
+  step: [
+    {
+      m: {
+        vin: "vin01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vin_fuel_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVinFuelFlow"
+}

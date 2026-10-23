@@ -1,0 +1,22 @@
+# BasicVehicleFlow
+
+main: kit: flow: BasicVehicleFlow:
+{
+  entity: "vehicle",
+  kind: "basic",
+  name: "BasicVehicleFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vehicle_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVehicleFlow"
+}

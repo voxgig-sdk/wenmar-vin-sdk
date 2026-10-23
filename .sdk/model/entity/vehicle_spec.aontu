@@ -1,0 +1,406 @@
+# Entity: vehicle_spec
+
+main: kit: entity: vehicle_spec: {
+
+  alias: field: {}
+
+  fields: {
+    battery_type: {
+      h: "Battery Type"
+      n: "battery_type"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    battery_voltage: {
+      fo: "int32"
+      h: "Battery Voltage"
+      n: "battery_voltage"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    confidence: {
+      h: "Confidence"
+      n: "confidence"
+      r: true
+      sh: "`model`, `engine` or `submodel`, as on a fuel rating."
+      t: "`$STRING`"
+    }
+    cylinder_deactivation: {
+      h: "Cylinder Deactivation"
+      n: "cylinder_deactivation"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$BOOLEAN`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    cylinder_deactivation_name: {
+      h: "Cylinder Deactivation Name"
+      n: "cylinder_deactivation_name"
+      r: false
+      sh: "The maker's name for it, such as `Active Fuel Management`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    described_as: {
+      h: "Described As"
+      n: "described_as"
+      r: true
+      t: "`$STRING`"
+    }
+    drive: {
+      h: "Drive"
+      n: "drive"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    electrification: {
+      h: "Electrification"
+      n: "electrification"
+      r: false
+      sh: "EPA's kind of alternative powertrain: `Hybrid`, `Plug-in Hybrid`, `EV`, `FFV`, `Diesel`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    emission_standards: {
+      h: "Emission Standards"
+      n: "emission_standards"
+      r: true
+      t: "`$ARRAY`"
+    }
+    engine: {
+      h: "Engine"
+      n: "engine"
+      r: false
+      t: "`$ANY`"
+    }
+    ev_motor: {
+      h: "Ev Motor"
+      n: "ev_motor"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    exhaust_valves: {
+      fo: "int32"
+      h: "Exhaust Valves"
+      n: "exhaust_valves"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    fuel_grade: {
+      h: "Fuel Grade"
+      n: "fuel_grade"
+      r: true
+      t: "`$STRING`"
+    }
+    fuel_usage: {
+      h: "Fuel Usage"
+      n: "fuel_usage"
+      r: false
+      sh: "Whether the grade is recommended or required, in EPA's words."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    gears: {
+      fo: "int32"
+      h: "Gears"
+      n: "gears"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    intake_valves: {
+      fo: "int32"
+      h: "Intake Valves"
+      n: "intake_valves"
+      r: false
+      sh: "Per cylinder."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    luggage_volume_ft3: {
+      fo: "int32"
+      h: "Luggage Volume Ft3"
+      n: "luggage_volume_ft3"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    luggage_volume_l: {
+      fo: "int32"
+      h: "Luggage Volume L"
+      n: "luggage_volume_l"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    motor_kw: {
+      h: "Motor Kw"
+      n: "motor_kw"
+      r: false
+      sh: "Rated motor power in kW, as EPA's file writes it: `135`, `8 and 30`."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    passenger_volume_ft3: {
+      fo: "int32"
+      h: "Passenger Volume Ft3"
+      n: "passenger_volume_ft3"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    passenger_volume_l: {
+      fo: "int32"
+      h: "Passenger Volume L"
+      n: "passenger_volume_l"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    size_class: {
+      h: "Size Class"
+      n: "size_class"
+      r: true
+      t: "`$STRING`"
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: true
+      t: "`$STRING`"
+    }
+    source_id: {
+      h: "Source Id"
+      n: "source_id"
+      r: true
+      t: "`$STRING`"
+    }
+    start_stop: {
+      h: "Start Stop"
+      n: "start_stop"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$BOOLEAN`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    supercharger: {
+      h: "Supercharger"
+      n: "supercharger"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    transmission: {
+      h: "Transmission"
+      n: "transmission"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    transmission_type: {
+      h: "Transmission Type"
+      n: "transmission_type"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    turbo: {
+      h: "Turbo"
+      n: "turbo"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    variable_valve_lift: {
+      h: "Variable Valve Lift"
+      n: "variable_valve_lift"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$BOOLEAN`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    variable_valve_timing: {
+      h: "Variable Valve Timing"
+      n: "variable_valve_timing"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$BOOLEAN`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vehicle_spec"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/specs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "2018_ford_f-150"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/specs"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "specs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

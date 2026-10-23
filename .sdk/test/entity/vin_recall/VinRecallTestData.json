@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "vin_recall": {
+      "VIN_RECALL00": {
+        "as_of": {},
+        "attribution": [],
+        "decode": {},
+        "id": "VIN_RECALL00",
+        "lookup": {},
+        "may_apply": false,
+        "recalls": [],
+        "vehicle": "s61",
+        "warnings": []
+      },
+      "VIN_RECALL01": {
+        "as_of": {},
+        "attribution": [],
+        "decode": {},
+        "id": "VIN_RECALL01",
+        "lookup": {},
+        "may_apply": false,
+        "recalls": [],
+        "vehicle": "sbb",
+        "warnings": []
+      },
+      "VIN_RECALL02": {
+        "as_of": {},
+        "attribution": [],
+        "decode": {},
+        "id": "VIN_RECALL02",
+        "lookup": {},
+        "may_apply": false,
+        "recalls": [],
+        "vehicle": "s115",
+        "warnings": []
+      }
+    }
+  },
+  "new": {
+    "vin_recall": {
+      "vin_recall_ref01": {
+        "as_of": {},
+        "attribution": [],
+        "decode": {},
+        "lookup": {},
+        "may_apply": false,
+        "recalls": [],
+        "vehicle": "s16f",
+        "warnings": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vin/{vin}/recalls": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

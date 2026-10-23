@@ -1,0 +1,81 @@
+# Entity: data
+
+main: kit: entity: data: {
+
+  alias: field: {}
+
+  fields: {
+    built_at: {
+      h: "Built At"
+      n: "built_at"
+      r: true
+      sh: "When the data file was built, in UTC."
+      t: "`$STRING`"
+    }
+    data_version: {
+      h: "Data Version"
+      n: "data_version"
+      r: true
+      sh: "The data release, such as `2026.09`."
+      t: "`$STRING`"
+    }
+    datasets: {
+      h: "Datasets"
+      n: "datasets"
+      r: true
+      sh: "The datasets served beside the catalog, such as `recalls_us`, by id."
+      t: "`$OBJECT`"
+    }
+    server_version: {
+      h: "Server Version"
+      n: "server_version"
+      r: true
+      sh: "The version of the server."
+      t: "`$STRING`"
+    }
+    vpic_release: {
+      h: "Vpic Release"
+      n: "vpic_release"
+      r: true
+      sh: "The NHTSA vPIC release the data was built from."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "data"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/meta"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/meta"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "meta"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

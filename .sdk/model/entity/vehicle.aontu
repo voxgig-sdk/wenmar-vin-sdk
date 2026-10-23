@@ -1,0 +1,70 @@
+# Entity: vehicle
+
+main: kit: entity: vehicle: {
+
+  alias: field: {}
+
+  name: "vehicle"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/years"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "scope"
+                or: "scope"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "term"
+                or: "term"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/years"
+          q: {
+            "$action": "year"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              lit: "years"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

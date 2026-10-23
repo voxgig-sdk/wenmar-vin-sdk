@@ -1,0 +1,22 @@
+# BasicPayrollDeductionFlow
+
+main: kit: flow: BasicPayrollDeductionFlow:
+{
+  entity: "payroll_deduction",
+  kind: "basic",
+  name: "BasicPayrollDeductionFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "payroll_deduction_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPayrollDeductionFlow"
+}

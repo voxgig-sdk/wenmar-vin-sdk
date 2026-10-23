@@ -1,0 +1,83 @@
+{
+  "existing": {
+    "recall_investigation": {
+      "RECALL_INVESTIGATION00": {
+        "action": "s82",
+        "campaigns": [],
+        "closed": "s84",
+        "component": "s85",
+        "kind": "s86",
+        "kind_name": "s87",
+        "manufacturer": "s88",
+        "match": "s89",
+        "models": [],
+        "open": false,
+        "opened": "s8c",
+        "subject": "s8d",
+        "summary": "s8e",
+        "campaign": "CAMPAIGN01",
+        "recall_id": "RECALL01"
+      },
+      "RECALL_INVESTIGATION01": {
+        "action": "s104",
+        "campaigns": [],
+        "closed": "s106",
+        "component": "s107",
+        "kind": "s108",
+        "kind_name": "s109",
+        "manufacturer": "s10a",
+        "match": "s10b",
+        "models": [],
+        "open": false,
+        "opened": "s10e",
+        "subject": "s10f",
+        "summary": "s110",
+        "campaign": "CAMPAIGN01",
+        "recall_id": "RECALL01"
+      },
+      "RECALL_INVESTIGATION02": {
+        "action": "s186",
+        "campaigns": [],
+        "closed": "s188",
+        "component": "s189",
+        "kind": "s18a",
+        "kind_name": "s18b",
+        "manufacturer": "s18c",
+        "match": "s18d",
+        "models": [],
+        "open": false,
+        "opened": "s190",
+        "subject": "s191",
+        "summary": "s192",
+        "campaign": "CAMPAIGN01",
+        "recall_id": "RECALL01"
+      }
+    }
+  },
+  "new": {
+    "recall_investigation": {
+      "recall_investigation_ref01": {
+        "action": "s208",
+        "campaigns": [],
+        "closed": "s20a",
+        "component": "s20b",
+        "kind": "s20c",
+        "kind_name": "s20d",
+        "manufacturer": "s20e",
+        "match": "s20f",
+        "models": [],
+        "open": false,
+        "opened": "s212",
+        "subject": "s213",
+        "summary": "s214"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/recalls/{source}/{campaign}/investigations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

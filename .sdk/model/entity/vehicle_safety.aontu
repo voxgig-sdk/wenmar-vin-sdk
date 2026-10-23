@@ -1,0 +1,220 @@
+# Entity: vehicle_safety
+
+main: kit: entity: vehicle_safety: {
+
+  alias: field: {}
+
+  fields: {
+    body_style: {
+      h: "Body Style"
+      n: "body_style"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    curb_weight_kg: {
+      fo: "int32"
+      h: "Curb Weight Kg"
+      n: "curb_weight_kg"
+      r: false
+      sh: "The weight of the vehicle NHTSA tested."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    curb_weight_lb: {
+      fo: "int32"
+      h: "Curb Weight Lb"
+      n: "curb_weight_lb"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: true
+      sh: "The vehicle NHTSA rated, in NHTSA's words, on one line."
+      t: "`$STRING`"
+    }
+    drive: {
+      h: "Drive"
+      n: "drive"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    features: {
+      h: "Features"
+      n: "features"
+      r: true
+      sh: "The safety features NHTSA lists with a rating."
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    match: {
+      h: "Match"
+      n: "match"
+      r: true
+      sh: "How NHTSA's model name reached this model: `exact`, `base` (NHTSA names a body or a version of it) or `curated`."
+      t: "`$STRING`"
+    }
+    model: {
+      h: "Model"
+      n: "model"
+      r: true
+      sh: "The model, body style, vehicle type and drive as NHTSA words them."
+      t: "`$STRING`"
+    }
+    notes: {
+      h: "Notes"
+      n: "notes"
+      r: true
+      sh: "NHTSA's safety concerns and footnotes: what happened in a test, and which vehicles the rating does not cover."
+      t: "`$ARRAY`"
+    }
+    release: {
+      fo: "int32"
+      h: "Release"
+      n: "release"
+      r: true
+      sh: "1 for the first release of a model year; 2 or 3 for a later one that NHTSA rated again."
+      t: "`$INTEGER`"
+    }
+    rollover_risk_percent: {
+      fo: "double"
+      h: "Rollover Risk Percent"
+      n: "rollover_risk_percent"
+      r: false
+      sh: "The chance of a rollover in a single-vehicle crash, in percent."
+      t: [
+        "`$ONE`"
+        [
+          "`$NUMBER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    rollover_tip: {
+      h: "Rollover Tip"
+      n: "rollover_tip"
+      r: false
+      sh: "Whether the vehicle tipped up in NHTSA's dynamic test."
+      t: [
+        "`$ONE`"
+        [
+          "`$BOOLEAN`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    stars: {
+      h: "Stars"
+      n: "stars"
+      r: true
+      sh: "The stars of one rating, each from 1 to 5."
+      t: "`$OBJECT`"
+    }
+    vehicle_type: {
+      h: "Vehicle Type"
+      n: "vehicle_type"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vehicle_safety"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/safety"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "2018_ford_f-150"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/safety"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "safety"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

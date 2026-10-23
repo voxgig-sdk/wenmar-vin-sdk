@@ -1,0 +1,150 @@
+# Entity: vin_spec
+
+main: kit: entity: vin_spec: {
+
+  alias: field: {}
+
+  fields: {
+    as_of: {
+      h: "As Of"
+      n: "as_of"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      t: "`$ARRAY`"
+    }
+    decode: {
+      h: "Decode"
+      n: "decode"
+      r: true
+      sh: "What a VIN decoded to, as far as recalls need it."
+      t: "`$OBJECT`"
+    }
+    engine: {
+      h: "Engine"
+      n: "engine"
+      r: false
+      t: "`$ANY`"
+    }
+    engine_settled: {
+      h: "Engine Settled"
+      n: "engine_settled"
+      r: true
+      sh: "Whether `specs` is narrowed to `engine`."
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    specs: {
+      h: "Specs"
+      n: "specs"
+      r: true
+      t: "`$ARRAY`"
+    }
+    vehicle: {
+      h: "Vehicle"
+      n: "vehicle"
+      r: false
+      t: "`$ANY`"
+    }
+    warnings: {
+      h: "Warnings"
+      n: "warnings"
+      r: true
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vin_spec"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vin/{vin}/specs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "KM8K2CAB4PU001140"
+                k: "param"
+                n: "id"
+                or: "vin"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "year"
+                or: "year"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vin/{vin}/specs"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              vin: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vin"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "specs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

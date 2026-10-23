@@ -1,0 +1,104 @@
+{
+  "existing": {
+    "vehicle_fuel": {
+      "VEHICLE_FUEL00": {
+        "co2_g_km": "sc8",
+        "confidence": "sc9",
+        "country": "sca",
+        "cylinders": "scb",
+        "described_as": "scc",
+        "displacement_l": "scd",
+        "drive": "sce",
+        "engine": "scf",
+        "fuel_grade": "sd0",
+        "id": "VEHICLE_FUEL00",
+        "kwh_100km": "sd2",
+        "l_100km": "sd3",
+        "match": "sd4",
+        "mpg": "sd5",
+        "range_km": "sd6",
+        "range_mi": "sd7",
+        "second_fuel": "sd8",
+        "source": "sd9",
+        "source_id": "SOURCE01",
+        "transmission": "sdb"
+      },
+      "VEHICLE_FUEL01": {
+        "co2_g_km": "s190",
+        "confidence": "s191",
+        "country": "s192",
+        "cylinders": "s193",
+        "described_as": "s194",
+        "displacement_l": "s195",
+        "drive": "s196",
+        "engine": "s197",
+        "fuel_grade": "s198",
+        "id": "VEHICLE_FUEL01",
+        "kwh_100km": "s19a",
+        "l_100km": "s19b",
+        "match": "s19c",
+        "mpg": "s19d",
+        "range_km": "s19e",
+        "range_mi": "s19f",
+        "second_fuel": "s1a0",
+        "source": "s1a1",
+        "source_id": "SOURCE01",
+        "transmission": "s1a3"
+      },
+      "VEHICLE_FUEL02": {
+        "co2_g_km": "s258",
+        "confidence": "s259",
+        "country": "s25a",
+        "cylinders": "s25b",
+        "described_as": "s25c",
+        "displacement_l": "s25d",
+        "drive": "s25e",
+        "engine": "s25f",
+        "fuel_grade": "s260",
+        "id": "VEHICLE_FUEL02",
+        "kwh_100km": "s262",
+        "l_100km": "s263",
+        "match": "s264",
+        "mpg": "s265",
+        "range_km": "s266",
+        "range_mi": "s267",
+        "second_fuel": "s268",
+        "source": "s269",
+        "source_id": "SOURCE01",
+        "transmission": "s26b"
+      }
+    }
+  },
+  "new": {
+    "vehicle_fuel": {
+      "vehicle_fuel_ref01": {
+        "co2_g_km": "s320",
+        "confidence": "s321",
+        "country": "s322",
+        "cylinders": "s323",
+        "described_as": "s324",
+        "displacement_l": "s325",
+        "drive": "s326",
+        "engine": "s327",
+        "fuel_grade": "s328",
+        "kwh_100km": "s32a",
+        "l_100km": "s32b",
+        "match": "s32c",
+        "mpg": "s32d",
+        "range_km": "s32e",
+        "range_mi": "s32f",
+        "second_fuel": "s330",
+        "source": "s331",
+        "source_id": "SOURCE01",
+        "transmission": "s333"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/{id}/fuel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

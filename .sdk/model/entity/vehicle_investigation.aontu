@@ -1,0 +1,229 @@
+# Entity: vehicle_investigation
+
+main: kit: entity: vehicle_investigation: {
+
+  alias: field: {}
+
+  fields: {
+    action: {
+      h: "Action"
+      n: "action"
+      r: true
+      sh: "NHTSA's action number."
+      t: "`$STRING`"
+    }
+    campaigns: {
+      h: "Campaigns"
+      n: "campaigns"
+      r: true
+      sh: "The recall campaigns it led to, as NHTSA numbers them."
+      t: "`$ARRAY`"
+    }
+    closed: {
+      h: "Closed"
+      n: "closed"
+      r: false
+      sh: "The day it was closed."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    component: {
+      h: "Component"
+      n: "component"
+      r: false
+      sh: "The components it names, as NHTSA words them, separated by `; `."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: true
+      sh: "The letters the number starts with."
+      t: "`$STRING`"
+    }
+    kind_name: {
+      h: "Kind Name"
+      n: "kind_name"
+      r: false
+      sh: "The kind in words."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    manufacturer: {
+      h: "Manufacturer"
+      n: "manufacturer"
+      r: false
+      sh: "The manufacturers it names, separated by `; `."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    match: {
+      h: "Match"
+      n: "match"
+      r: false
+      sh: "In an answer about one model year: how the investigation's vehicle text reached that model."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    models: {
+      h: "Models"
+      n: "models"
+      r: true
+      sh: "In an answer about one model year: the model names the investigation lists that reached it."
+      t: "`$ARRAY`"
+    }
+    open: {
+      h: "Open"
+      n: "open"
+      r: true
+      sh: "Whether it was opened in 2010 or later and has no day closed."
+      t: "`$BOOLEAN`"
+    }
+    opened: {
+      h: "Opened"
+      n: "opened"
+      r: false
+      sh: "The day it was opened."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    subject: {
+      h: "Subject"
+      n: "subject"
+      r: false
+      sh: "NHTSA's one-line subject."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    summary: {
+      h: "Summary"
+      n: "summary"
+      r: false
+      sh: "NHTSA's summary."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vehicle_investigation"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/investigations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "2019_ram_1500"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "open"
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/investigations"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "investigations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

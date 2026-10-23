@@ -1,0 +1,28 @@
+# BasicDataFlow
+
+main: kit: flow: BasicDataFlow:
+{
+  entity: "data",
+  kind: "basic",
+  name: "BasicDataFlow",
+  step: [
+    {
+      i: {
+        ref: "data_ref01",
+        srcdatavar: "data_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-data_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDataFlow"
+}

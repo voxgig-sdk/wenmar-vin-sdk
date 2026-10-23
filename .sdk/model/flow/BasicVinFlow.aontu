@@ -1,0 +1,32 @@
+# BasicVinFlow
+
+main: kit: flow: BasicVinFlow:
+{
+  entity: "vin",
+  kind: "basic",
+  name: "BasicVinFlow",
+  step: [
+    {
+      i: {
+        ref: "vin_ref01",
+        srcdatavar: "vin_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "vin01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-vin_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVinFlow"
+}

@@ -1,0 +1,44 @@
+# BasicMakeFlow
+
+main: kit: flow: BasicMakeFlow:
+{
+  entity: "make",
+  kind: "basic",
+  name: "BasicMakeFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "make_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "make_ref01",
+        srcdatavar: "make_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "make01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-make_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMakeFlow"
+}

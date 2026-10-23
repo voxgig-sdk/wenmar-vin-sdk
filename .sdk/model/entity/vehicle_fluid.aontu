@@ -1,0 +1,155 @@
+# Entity: vehicle_fluid
+
+main: kit: entity: vehicle_fluid: {
+
+  alias: field: {}
+
+  fields: {
+    as_of: {
+      h: "As Of"
+      n: "as_of"
+      r: false
+      sh: "The day EPA's oil grades were current."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      t: "`$ARRAY`"
+    }
+    brake: {
+      h: "Brake"
+      n: "brake"
+      r: true
+      t: "`$ARRAY`"
+    }
+    checked_as_of: {
+      h: "Checked As Of"
+      n: "checked_as_of"
+      r: false
+      sh: "The day of the newest hand-read record the server holds, for any vehicle."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    coolant: {
+      h: "Coolant"
+      n: "coolant"
+      r: true
+      t: "`$ARRAY`"
+    }
+    engine_oil: {
+      h: "Engine Oil"
+      n: "engine_oil"
+      r: true
+      t: "`$ARRAY`"
+    }
+    engine_oil_checked: {
+      h: "Engine Oil Checked"
+      n: "engine_oil_checked"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    refrigerant: {
+      h: "Refrigerant"
+      n: "refrigerant"
+      r: true
+      t: "`$ARRAY`"
+    }
+    transmission: {
+      h: "Transmission"
+      n: "transmission"
+      r: true
+      t: "`$ARRAY`"
+    }
+    vehicle: {
+      h: "Vehicle"
+      n: "vehicle"
+      r: true
+      sh: "The model year an answer is about."
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vehicle_fluid"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/fluids"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "2018_ford_f-150"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/fluids"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "fluids"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

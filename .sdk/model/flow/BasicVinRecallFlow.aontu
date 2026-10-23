@@ -1,0 +1,26 @@
+# BasicVinRecallFlow
+
+main: kit: flow: BasicVinRecallFlow:
+{
+  entity: "vin_recall",
+  kind: "basic",
+  name: "BasicVinRecallFlow",
+  step: [
+    {
+      m: {
+        vin: "vin01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vin_recall_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVinRecallFlow"
+}

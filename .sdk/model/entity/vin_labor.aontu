@@ -1,0 +1,244 @@
+# Entity: vin_labor
+
+main: kit: entity: vin_labor: {
+
+  alias: field: {}
+
+  fields: {
+    as_of: {
+      h: "As Of"
+      n: "as_of"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      t: "`$ARRAY`"
+    }
+    class: {
+      h: "Class"
+      n: "class"
+      r: false
+      t: "`$ANY`"
+    }
+    decode: {
+      h: "Decode"
+      n: "decode"
+      r: true
+      sh: "What a VIN decoded to, as far as recalls need it."
+      t: "`$OBJECT`"
+    }
+    engine: {
+      h: "Engine"
+      n: "engine"
+      r: false
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    estimates: {
+      h: "Estimates"
+      n: "estimates"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    note: {
+      h: "Note"
+      n: "note"
+      r: true
+      t: "`$STRING`"
+    }
+    vehicle: {
+      h: "Vehicle"
+      n: "vehicle"
+      r: false
+      t: "`$ANY`"
+    }
+    warnings: {
+      h: "Warnings"
+      n: "warnings"
+      r: true
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vin_labor"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vin/{vin}/labor"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "KM8K2CAB4PU001140"
+                k: "param"
+                n: "id"
+                or: "vin"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "year"
+                or: "year"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vin/{vin}/labor"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              vin: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vin"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "labor"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vin/{vin}/labor/{job}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "brake-pads-front"
+                k: "param"
+                n: "id"
+                or: "job"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "KM8K2CAB4PU001140"
+                k: "param"
+                n: "vin_id"
+                or: "vin"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "year"
+                or: "year"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vin/{vin}/labor/{job}"
+          q: {
+            exist: [
+              "id"
+              "vin_id"
+            ]
+          }
+          r: {
+            param: {
+              job: "id"
+              vin: "vin_id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vin"
+            }
+            {
+              var: "vin_id"
+            }
+            {
+              lit: "labor"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.vin")]
+  ]
+
+}

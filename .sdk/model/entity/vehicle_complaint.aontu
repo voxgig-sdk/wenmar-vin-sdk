@@ -1,0 +1,159 @@
+# Entity: vehicle_complaint
+
+main: kit: entity: vehicle_complaint: {
+
+  alias: field: {}
+
+  fields: {
+    complaints: {
+      fo: "int32"
+      h: "Complaints"
+      n: "complaints"
+      r: true
+      t: "`$INTEGER`"
+    }
+    crashes: {
+      fo: "int32"
+      h: "Crashes"
+      n: "crashes"
+      r: true
+      sh: "Complaints that report a crash."
+      t: "`$INTEGER`"
+    }
+    fires: {
+      fo: "int32"
+      h: "Fires"
+      n: "fires"
+      r: true
+      sh: "Complaints that report a fire."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "A component id, such as `steering` or `brake-pad`."
+      t: "`$STRING`"
+    }
+    injuries: {
+      fo: "int32"
+      h: "Injuries"
+      n: "injuries"
+      r: true
+      sh: "Complaints that report at least one person injured."
+      t: "`$INTEGER`"
+    }
+    median_km: {
+      fo: "int32"
+      h: "Median Km"
+      n: "median_km"
+      r: false
+      sh: "The median of the mileages owners gave, in kilometres."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    median_miles: {
+      fo: "int32"
+      h: "Median Miles"
+      n: "median_miles"
+      r: false
+      sh: "The same in miles, as NHTSA records it."
+      t: [
+        "`$ONE`"
+        [
+          "`$INTEGER`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    parent: {
+      h: "Parent"
+      n: "parent"
+      r: false
+      sh: "The system a part belongs to."
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "vehicle_complaint"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/{id}/complaints"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "2016_honda_civic"
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/{id}/complaints"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "complaints"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

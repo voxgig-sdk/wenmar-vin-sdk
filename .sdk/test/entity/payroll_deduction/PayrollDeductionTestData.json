@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "payroll_deduction": {
+      "PAYROLL_DEDUCTION00": {
+        "meaning": "s1e",
+        "name": "s1f",
+        "value": 32
+      },
+      "PAYROLL_DEDUCTION01": {
+        "meaning": "s3c",
+        "name": "s3d",
+        "value": 62
+      },
+      "PAYROLL_DEDUCTION02": {
+        "meaning": "s5a",
+        "name": "s5b",
+        "value": 92
+      }
+    }
+  },
+  "new": {
+    "payroll_deduction": {
+      "payroll_deduction_ref01": {
+        "meaning": "s78",
+        "name": "s79",
+        "value": 122
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/payroll/deductions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

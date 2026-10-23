@@ -1,0 +1,247 @@
+# Entity: code
+
+main: kit: entity: code: {
+
+  alias: field: {}
+
+  fields: {
+    attribution: {
+      h: "Attribution"
+      n: "attribution"
+      r: true
+      sh: "The credit lines the data's licences ask for."
+      t: "`$ARRAY`"
+    }
+    checked: {
+      h: "Checked"
+      n: "checked"
+      r: true
+      sh: "The day it was approved."
+      t: "`$STRING`"
+    }
+    checks: {
+      h: "Checks"
+      n: "checks"
+      r: true
+      sh: "What a technician usually verifies first."
+      t: "`$ARRAY`"
+    }
+    code: {
+      h: "Code"
+      n: "code"
+      r: true
+      t: "`$STRING`"
+    }
+    common_causes: {
+      h: "Common Causes"
+      n: "common_causes"
+      r: true
+      sh: "General causes, not about one make."
+      t: "`$ARRAY`"
+    }
+    components: {
+      h: "Components"
+      n: "components"
+      r: true
+      t: "`$ARRAY`"
+    }
+    generic: {
+      h: "Generic"
+      n: "generic"
+      r: true
+      sh: "Always `true` here: only codes every maker uses the same way are described."
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    meaning: {
+      h: "Meaning"
+      n: "meaning"
+      r: true
+      sh: "What the code tells a service advisor."
+      t: "`$STRING`"
+    }
+    note: {
+      h: "Note"
+      n: "note"
+      r: true
+      sh: "What a description is and is not."
+      t: "`$STRING`"
+    }
+    related: {
+      h: "Related"
+      n: "related"
+      r: true
+      sh: "Related codes that are described too."
+      t: "`$ARRAY`"
+    }
+    reviewer: {
+      h: "Reviewer"
+      n: "reviewer"
+      r: true
+      sh: "The GitHub name of the person who approved the text."
+      t: "`$STRING`"
+    }
+    system: {
+      h: "System"
+      n: "system"
+      r: true
+      sh: "Where the index lists it: a group (`powertrain`, `body`, `chassis`, `network`), or a group and an area of it."
+      t: "`$STRING`"
+    }
+    system_name: {
+      h: "System Name"
+      n: "system_name"
+      r: true
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: true
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The code's page on this site."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "code"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/codes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "P04"
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "powertrain/emissions"
+                k: "query"
+                n: "system"
+                or: "system"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/codes"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "codes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/codes/{code}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "P0420"
+                k: "param"
+                n: "id"
+                or: "code"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/codes/{code}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              code: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "codes"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

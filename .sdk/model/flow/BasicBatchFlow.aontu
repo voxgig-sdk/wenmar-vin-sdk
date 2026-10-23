@@ -1,0 +1,18 @@
+# BasicBatchFlow
+
+main: kit: flow: BasicBatchFlow:
+{
+  entity: "batch",
+  kind: "basic",
+  name: "BasicBatchFlow",
+  step: [
+    {
+      i: {
+        ref: "batch_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicBatchFlow"
+}

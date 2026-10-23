@@ -1,0 +1,84 @@
+{
+  "existing": {
+    "vehicle_safety": {
+      "VEHICLE_SAFETY00": {
+        "body_style": "s96",
+        "curb_weight_kg": "s97",
+        "curb_weight_lb": "s98",
+        "description": "s99",
+        "drive": "s9a",
+        "features": {},
+        "id": "VEHICLE_SAFETY00",
+        "match": "s9d",
+        "model": "s9e",
+        "notes": [],
+        "release": 160,
+        "rollover_risk_percent": "sa1",
+        "rollover_tip": "sa2",
+        "stars": {},
+        "vehicle_type": "sa4"
+      },
+      "VEHICLE_SAFETY01": {
+        "body_style": "s12c",
+        "curb_weight_kg": "s12d",
+        "curb_weight_lb": "s12e",
+        "description": "s12f",
+        "drive": "s130",
+        "features": {},
+        "id": "VEHICLE_SAFETY01",
+        "match": "s133",
+        "model": "s134",
+        "notes": [],
+        "release": 310,
+        "rollover_risk_percent": "s137",
+        "rollover_tip": "s138",
+        "stars": {},
+        "vehicle_type": "s13a"
+      },
+      "VEHICLE_SAFETY02": {
+        "body_style": "s1c2",
+        "curb_weight_kg": "s1c3",
+        "curb_weight_lb": "s1c4",
+        "description": "s1c5",
+        "drive": "s1c6",
+        "features": {},
+        "id": "VEHICLE_SAFETY02",
+        "match": "s1c9",
+        "model": "s1ca",
+        "notes": [],
+        "release": 460,
+        "rollover_risk_percent": "s1cd",
+        "rollover_tip": "s1ce",
+        "stars": {},
+        "vehicle_type": "s1d0"
+      }
+    }
+  },
+  "new": {
+    "vehicle_safety": {
+      "vehicle_safety_ref01": {
+        "body_style": "s258",
+        "curb_weight_kg": "s259",
+        "curb_weight_lb": "s25a",
+        "description": "s25b",
+        "drive": "s25c",
+        "features": {},
+        "match": "s25f",
+        "model": "s260",
+        "notes": [],
+        "release": 610,
+        "rollover_risk_percent": "s263",
+        "rollover_tip": "s264",
+        "stars": {},
+        "vehicle_type": "s266"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/{id}/safety": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

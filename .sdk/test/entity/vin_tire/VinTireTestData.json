@@ -1,0 +1,52 @@
+{
+  "existing": {
+    "vin_tire": {
+      "VIN_TIRE00": {
+        "as_of": "s46",
+        "attribution": [],
+        "decode": {},
+        "fitments": [],
+        "id": "VIN_TIRE00",
+        "vehicle": "s4b",
+        "warnings": []
+      },
+      "VIN_TIRE01": {
+        "as_of": "s8c",
+        "attribution": [],
+        "decode": {},
+        "fitments": [],
+        "id": "VIN_TIRE01",
+        "vehicle": "s91",
+        "warnings": []
+      },
+      "VIN_TIRE02": {
+        "as_of": "sd2",
+        "attribution": [],
+        "decode": {},
+        "fitments": [],
+        "id": "VIN_TIRE02",
+        "vehicle": "sd7",
+        "warnings": []
+      }
+    }
+  },
+  "new": {
+    "vin_tire": {
+      "vin_tire_ref01": {
+        "as_of": "s118",
+        "attribution": [],
+        "decode": {},
+        "fitments": [],
+        "vehicle": "s11d",
+        "warnings": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vin/{vin}/tires": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

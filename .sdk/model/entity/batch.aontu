@@ -1,0 +1,71 @@
+# Entity: batch
+
+main: kit: entity: batch: {
+
+  alias: field: {}
+
+  fields: {
+    vins: {
+      h: "Vins"
+      n: "vins"
+      r: true
+      sh: "At most 50 VINs."
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "batch"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "vins"
+          ]
+          co: {
+            id: "POST /v1/vin/batch"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "recalls"
+                k: "query"
+                n: "include"
+                or: "include"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/vin/batch"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vin"
+            }
+            {
+              lit: "batch"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

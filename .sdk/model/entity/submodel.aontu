@@ -1,0 +1,185 @@
+# Entity: submodel
+
+main: kit: entity: submodel: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$STRING`"
+    }
+    kind: {
+      h: "Kind"
+      n: "kind"
+      r: true
+      sh: "`trim` or `series` as NHTSA has it, or `preset` from this project's own list."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "submodel"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/vehicles/submodels"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "honda"
+                k: "query"
+                n: "make"
+                or: "make"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "civic"
+                k: "query"
+                n: "model"
+                or: "model"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "term"
+                or: "term"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 2019
+                k: "query"
+                n: "year"
+                or: "year"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/submodels"
+          q: {
+            exist: [
+              "make"
+              "model"
+              "year"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              lit: "submodels"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/vehicles/trims"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "honda"
+                k: "query"
+                n: "make"
+                or: "make"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "civic"
+                k: "query"
+                n: "model"
+                or: "model"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "term"
+                or: "term"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 2019
+                k: "query"
+                n: "year"
+                or: "year"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/vehicles/trims"
+          q: {
+            exist: [
+              "make"
+              "model"
+              "year"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "vehicles"
+            }
+            {
+              lit: "trims"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

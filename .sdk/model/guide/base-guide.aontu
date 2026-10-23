@@ -1,0 +1,284 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 36
+  metrics: count: path: 47
+  metrics: count: method: 47
+
+  entity: batch: {
+    path: "/v1/vin/batch": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: bulletin: {
+    path: "/v1/bulletins": {
+      op: list: method: *GET
+    }
+    path: "/v1/bulletins/{nhtsa_id}": {
+      rename: param: "nhtsa_id": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: code: {
+    path: "/v1/codes": {
+      op: list: method: *GET
+    }
+    path: "/v1/codes/{code}": {
+      rename: param: "code": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: data: {
+    path: "/v1/meta": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: engine: {
+    path: "/v1/vehicles/engines": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: entry: {
+    path: "/v1/vehicles/search": {
+      op: list: method: *GET
+    }
+    path: "/v1/vehicles/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: job: {
+    path: "/v1/jobs": {
+      op: list: method: *GET
+    }
+    path: "/v1/jobs/{job}": {
+      rename: param: "job": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: make: {
+    path: "/v1/makes/{make}": {
+      rename: param: "make": *"id"
+      op: load: method: *GET
+    }
+    path: "/v1/vehicles/makes": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: model: {
+    path: "/v1/models/{make}/{model}": {
+      op: load: method: *GET
+    }
+    path: "/v1/vehicles/models": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: overview: {
+    path: "/v1/vehicles/{id}/overview": {
+      rename: param: "id": *"vehicle_id"
+      op: list: method: *GET
+    }
+    path: "/v1/vin/{vin}/overview": {
+      rename: param: "vin": *"vin_id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: parts_card: {
+    path: "/v1/vin/{vin}/parts-card": {
+      rename: param: "vin": *"vin_id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: payroll_deduction: {
+    path: "/v1/payroll/deductions": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: recall: {
+    path: "/v1/recalls": {
+      op: list: method: *GET
+    }
+    path: "/v1/recalls/{source}/{campaign}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: recall_investigation: {
+    path: "/v1/recalls/{source}/{campaign}/investigations": {
+      rename: param: "source": *"recall_id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: recent: {
+    path: "/v1/recalls/recent": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: submodel: {
+    path: "/v1/vehicles/submodels": {
+      op: list: method: *GET
+    }
+    path: "/v1/vehicles/trims": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: vehicle: {
+    path: "/v1/vehicles/years": {
+      action: "year": {}
+      op: list: method: *GET
+    }
+  }
+
+  entity: vehicle_bulletin: {
+    path: "/v1/vehicles/{id}/bulletins": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: vehicle_code: {
+    path: "/v1/vehicles/{id}/codes/{code}": {
+      rename: param: "code": *"id"
+      rename: param: "id": *"vehicle_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: vehicle_complaint: {
+    path: "/v1/vehicles/{id}/complaints": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: vehicle_fluid: {
+    path: "/v1/vehicles/{id}/fluids": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: vehicle_fuel: {
+    path: "/v1/vehicles/{id}/fuel": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.ratings`")|top
+    }
+  }
+
+  entity: vehicle_investigation: {
+    path: "/v1/vehicles/{id}/investigations": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: vehicle_labor: {
+    path: "/v1/vehicles/{id}/labor": {
+      op: list: method: *GET
+    }
+    path: "/v1/vehicles/{id}/labor/{job}": {
+      rename: param: "id": *"vehicle_id"
+      rename: param: "job": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: vehicle_recall: {
+    path: "/v1/vehicles/{id}/recalls": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: vehicle_safety: {
+    path: "/v1/vehicles/{id}/safety": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: vehicle_spec: {
+    path: "/v1/vehicles/{id}/specs": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: vehicle_tire: {
+    path: "/v1/vehicles/{id}/tires": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: vin: {
+    path: "/v1/vin/{vin}": {
+      rename: param: "vin": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: vin_bulletin: {
+    path: "/v1/vin/{vin}/bulletins": {
+      rename: param: "vin": *"id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: vin_fluid: {
+    path: "/v1/vin/{vin}/fluids": {
+      rename: param: "vin": *"id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: vin_fuel: {
+    path: "/v1/vin/{vin}/fuel": {
+      rename: param: "vin": *"id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: vin_labor: {
+    path: "/v1/vin/{vin}/labor": {
+      rename: param: "vin": *"id"
+      op: list: method: *GET
+    }
+    path: "/v1/vin/{vin}/labor/{job}": {
+      rename: param: "job": *"id"
+      rename: param: "vin": *"vin_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: vin_recall: {
+    path: "/v1/vin/{vin}/recalls": {
+      rename: param: "vin": *"id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: vin_spec: {
+    path: "/v1/vin/{vin}/specs": {
+      rename: param: "vin": *"id"
+      op: list: method: *GET
+    }
+  }
+
+  entity: vin_tire: {
+    path: "/v1/vin/{vin}/tires": {
+      rename: param: "vin": *"id"
+      op: list: method: *GET
+    }
+  }
+
+}

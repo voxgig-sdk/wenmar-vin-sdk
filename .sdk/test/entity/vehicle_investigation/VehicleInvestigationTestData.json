@@ -1,0 +1,80 @@
+{
+  "existing": {
+    "vehicle_investigation": {
+      "VEHICLE_INVESTIGATION00": {
+        "action": "s8c",
+        "campaigns": [],
+        "closed": "s8e",
+        "component": "s8f",
+        "id": "VEHICLE_INVESTIGATION00",
+        "kind": "s91",
+        "kind_name": "s92",
+        "manufacturer": "s93",
+        "match": "s94",
+        "models": [],
+        "open": true,
+        "opened": "s97",
+        "subject": "s98",
+        "summary": "s99"
+      },
+      "VEHICLE_INVESTIGATION01": {
+        "action": "s118",
+        "campaigns": [],
+        "closed": "s11a",
+        "component": "s11b",
+        "id": "VEHICLE_INVESTIGATION01",
+        "kind": "s11d",
+        "kind_name": "s11e",
+        "manufacturer": "s11f",
+        "match": "s120",
+        "models": [],
+        "open": true,
+        "opened": "s123",
+        "subject": "s124",
+        "summary": "s125"
+      },
+      "VEHICLE_INVESTIGATION02": {
+        "action": "s1a4",
+        "campaigns": [],
+        "closed": "s1a6",
+        "component": "s1a7",
+        "id": "VEHICLE_INVESTIGATION02",
+        "kind": "s1a9",
+        "kind_name": "s1aa",
+        "manufacturer": "s1ab",
+        "match": "s1ac",
+        "models": [],
+        "open": true,
+        "opened": "s1af",
+        "subject": "s1b0",
+        "summary": "s1b1"
+      }
+    }
+  },
+  "new": {
+    "vehicle_investigation": {
+      "vehicle_investigation_ref01": {
+        "action": "s230",
+        "campaigns": [],
+        "closed": "s232",
+        "component": "s233",
+        "kind": "s235",
+        "kind_name": "s236",
+        "manufacturer": "s237",
+        "match": "s238",
+        "models": [],
+        "open": true,
+        "opened": "s23b",
+        "subject": "s23c",
+        "summary": "s23d"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/{id}/investigations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

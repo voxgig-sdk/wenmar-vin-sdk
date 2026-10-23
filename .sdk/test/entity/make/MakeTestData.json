@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "make": {
+      "MAKE00": {
+        "id": "MAKE00",
+        "links": "s29",
+        "name": "s2a",
+        "popular": false
+      },
+      "MAKE01": {
+        "id": "MAKE01",
+        "links": "s51",
+        "name": "s52",
+        "popular": false
+      },
+      "MAKE02": {
+        "id": "MAKE02",
+        "links": "s79",
+        "name": "s7a",
+        "popular": false
+      }
+    }
+  },
+  "new": {
+    "make": {
+      "make_ref01": {
+        "links": "sa1",
+        "name": "sa2",
+        "popular": false
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/makes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/makes/{make}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

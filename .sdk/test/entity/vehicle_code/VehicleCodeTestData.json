@@ -1,0 +1,67 @@
+{
+  "existing": {
+    "vehicle_code": {
+      "VEHICLE_CODE00": {
+        "attribution": [],
+        "bulletins": "s65",
+        "code": "s66",
+        "description": "s67",
+        "generic": true,
+        "id": "VEHICLE_CODE00",
+        "note": "s6a",
+        "related": {},
+        "url": "s6c",
+        "vehicle": {},
+        "vehicle_id": "VEHICLE01"
+      },
+      "VEHICLE_CODE01": {
+        "attribution": [],
+        "bulletins": "sc9",
+        "code": "sca",
+        "description": "scb",
+        "generic": true,
+        "id": "VEHICLE_CODE01",
+        "note": "sce",
+        "related": {},
+        "url": "sd0",
+        "vehicle": {},
+        "vehicle_id": "VEHICLE01"
+      },
+      "VEHICLE_CODE02": {
+        "attribution": [],
+        "bulletins": "s12d",
+        "code": "s12e",
+        "description": "s12f",
+        "generic": true,
+        "id": "VEHICLE_CODE02",
+        "note": "s132",
+        "related": {},
+        "url": "s134",
+        "vehicle": {},
+        "vehicle_id": "VEHICLE01"
+      }
+    }
+  },
+  "new": {
+    "vehicle_code": {
+      "vehicle_code_ref01": {
+        "attribution": [],
+        "bulletins": "s191",
+        "code": "s192",
+        "description": "s193",
+        "generic": true,
+        "note": "s196",
+        "related": {},
+        "url": "s198",
+        "vehicle": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/{id}/codes/{code}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

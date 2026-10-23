@@ -1,0 +1,22 @@
+# BasicVehicleSpecFlow
+
+main: kit: flow: BasicVehicleSpecFlow:
+{
+  entity: "vehicle_spec",
+  kind: "basic",
+  name: "BasicVehicleSpecFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "vehicle_spec_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVehicleSpecFlow"
+}

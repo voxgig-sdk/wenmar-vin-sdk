@@ -1,0 +1,72 @@
+{
+  "existing": {
+    "vin_labor": {
+      "VIN_LABOR00": {
+        "as_of": "s64",
+        "attribution": [],
+        "class": "s66",
+        "decode": {},
+        "engine": "s68",
+        "estimates": [],
+        "id": "VIN_LABOR00",
+        "note": "s6b",
+        "vehicle": "s6c",
+        "warnings": [],
+        "vin_id": "VIN01"
+      },
+      "VIN_LABOR01": {
+        "as_of": "sc8",
+        "attribution": [],
+        "class": "sca",
+        "decode": {},
+        "engine": "scc",
+        "estimates": [],
+        "id": "VIN_LABOR01",
+        "note": "scf",
+        "vehicle": "sd0",
+        "warnings": [],
+        "vin_id": "VIN01"
+      },
+      "VIN_LABOR02": {
+        "as_of": "s12c",
+        "attribution": [],
+        "class": "s12e",
+        "decode": {},
+        "engine": "s130",
+        "estimates": [],
+        "id": "VIN_LABOR02",
+        "note": "s133",
+        "vehicle": "s134",
+        "warnings": [],
+        "vin_id": "VIN01"
+      }
+    }
+  },
+  "new": {
+    "vin_labor": {
+      "vin_labor_ref01": {
+        "as_of": "s190",
+        "attribution": [],
+        "class": "s192",
+        "decode": {},
+        "engine": "s194",
+        "estimates": [],
+        "note": "s197",
+        "vehicle": "s198",
+        "warnings": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/vin/{vin}/labor": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/vin/{vin}/labor/{job}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

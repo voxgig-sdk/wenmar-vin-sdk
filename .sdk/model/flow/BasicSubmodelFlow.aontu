@@ -1,0 +1,22 @@
+# BasicSubmodelFlow
+
+main: kit: flow: BasicSubmodelFlow:
+{
+  entity: "submodel",
+  kind: "basic",
+  name: "BasicSubmodelFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "submodel_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSubmodelFlow"
+}

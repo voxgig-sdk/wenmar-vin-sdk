@@ -1,0 +1,21 @@
+{
+  "existing": {
+    "vehicle": {
+      "VEHICLE00": {},
+      "VEHICLE01": {},
+      "VEHICLE02": {}
+    }
+  },
+  "new": {
+    "vehicle": {
+      "vehicle_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /v1/vehicles/years": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}
